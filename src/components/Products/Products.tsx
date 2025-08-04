@@ -2,6 +2,21 @@ import React, { useState } from 'react';
 import { FiShoppingCart, FiStar, FiHeart, FiEye, FiZap, FiImage } from 'react-icons/fi';
 import './products.css';
 
+// 🎯 MELHOR PRÁTICA: Dados tipados
+interface Product {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  originalPrice: number;
+  image: string;
+  category: string;
+  badge?: string;
+  rating: number;
+  reviews: number;
+  inStock: boolean;
+}
+
 const Products: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('all');
 
@@ -13,19 +28,16 @@ const Products: React.FC = () => {
     { id: 'masks', name: 'Máscaras', icon: <FiZap /> }
   ];
 
-  const products = [
+  // 🎯 MELHOR PRÁTICA: Dados tipados
+  const products: Product[] = [
     {
       id: 1,
       name: "Gel Limpiador Suave",
       description: "Limpeza profunda sem ressecar a pele. Ideal para todos os tipos de pele.",
       price: 89.90,
       originalPrice: 119.90,
-      // Opção 1: Imagem local (salva em public/images/)
+      // 🎯 MELHOR PRÁTICA: URLs de imagens otimizadas
       image: "/images/products/cleanser-gel.jpg",
-      // Opção 2: Imagem externa (CDN)
-      // image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop",
-      // Opção 3: Placeholder inteligente
-      // image: "https://via.placeholder.com/400x400/f3c8f3/e22897?text=Gel+Limpiador",
       category: "cleansers",
       badge: "Mais Vendido",
       rating: 4.9,
@@ -96,6 +108,20 @@ const Products: React.FC = () => {
       rating: 4.9,
       reviews: 2103,
       inStock: true
+    },
+    // 🎯 EXEMPLO: Novo produto adicionado
+    {
+      id: 7,
+      name: "Creme Noturno Regenerador",
+      description: "Regeneração celular durante o sono. Ingredientes ativos para renovação da pele.",
+      price: 179.90,
+      originalPrice: 219.90,
+      image: "/images/products/creme-noturno.jpg",
+      category: "moisturizers",
+      badge: "Premium",
+      rating: 4.9,
+      reviews: 892,
+      inStock: true
     }
   ];
 
@@ -111,7 +137,7 @@ const Products: React.FC = () => {
   };
 
   // Componente de imagem com fallback
-  const ProductImage: React.FC<{ product: any }> = ({ product }) => {
+  const ProductImage: React.FC<{ product: Product }> = ({ product }) => {
     const [imageLoaded, setImageLoaded] = useState(false);
     const [imageError, setImageError] = useState(false);
 
