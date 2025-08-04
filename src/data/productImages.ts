@@ -1,10 +1,10 @@
-// 🎯 MELHOR PRÁTICA: Centralizar dados de imagens
+// 🎯 Centralizar dados de imagens
 // Este arquivo contém URLs de imagens otimizadas para os produtos
 
 export interface ProductImage {
   id: number;
   name: string;
-  // 🎯 MELHOR PRÁTICA: URLs responsivas baseadas na estrutura local
+  // 🎯 URLs responsivas baseadas na estrutura local
   images: {
     small: string;   // 300px - mobile
     medium: string;  // 600px - tablet
@@ -14,18 +14,18 @@ export interface ProductImage {
   alt: string;
 }
 
-// 🎯 MELHOR PRÁTICA: Imagens locais conforme README
+// 🎯 Imagens locais conforme README
 // Estrutura: public/images/products/nome-produto.jpg
 export const productImages: ProductImage[] = [
   {
     id: 1,
     name: "Gel Limpiador Suave",
     images: {
-      // 🎯 IMAGEM ATUALIZADA: aplicação-mockup_10.png
-      small: "/images/products/aplicação-mockup_10.png",
-      medium: "/images/products/aplicação-mockup_10.png",
-      large: "/images/products/aplicação-mockup_10.png",
-      original: "/images/products/aplicação-mockup_10.png"
+      // 🎯 Imagens locais em public/images/products/
+      small: "/images/products/cleanser-gel.jpg",
+      medium: "/images/products/cleanser-gel.jpg",
+      large: "/images/products/cleanser-gel.jpg",
+      original: "/images/products/cleanser-gel.jpg"
     },
     alt: "Gel limpiador facial suave em frasco transparente"
   },
@@ -33,11 +33,10 @@ export const productImages: ProductImage[] = [
     id: 2,
     name: "Hidratante Facial Premium",
     images: {
-      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_2.png
-      small: "/images/products/aplicação-mockup_2.png",
-      medium: "/images/products/aplicação-mockup_2.png",
-      large: "/images/products/aplicação-mockup_2.png",
-      original: "/images/products/aplicação-mockup_2.png"
+      small: "/images/products/moisturizer-premium.jpg",
+      medium: "/images/products/moisturizer-premium.jpg",
+      large: "/images/products/moisturizer-premium.jpg",
+      original: "/images/products/moisturizer-premium.jpg"
     },
     alt: "Hidratante facial premium em frasco elegante"
   },
@@ -45,11 +44,10 @@ export const productImages: ProductImage[] = [
     id: 3,
     name: "Sérum Vitamina C",
     images: {
-      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_3.png
-      small: "/images/products/aplicação-mockup_3.png",
-      medium: "/images/products/aplicação-mockup_3.png",
-      large: "/images/products/aplicação-mockup_3.png",
-      original: "/images/products/aplicação-mockup_3.png"
+      small: "/images/products/vitamin-c-serum.jpg",
+      medium: "/images/products/vitamin-c-serum.jpg",
+      large: "/images/products/vitamin-c-serum.jpg",
+      original: "/images/products/vitamin-c-serum.jpg"
     },
     alt: "Sérum de vitamina C em frasco âmbar"
   },
@@ -57,11 +55,10 @@ export const productImages: ProductImage[] = [
     id: 4,
     name: "Máscara Hidratante",
     images: {
-      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_4.png
-      small: "/images/products/aplicação-mockup_4.png",
-      medium: "/images/products/aplicação-mockup_4.png",
-      large: "/images/products/aplicação-mockup_4.png",
-      original: "/images/products/aplicação-mockup_4.png"
+      small: "/images/products/hydrating-mask.jpg",
+      medium: "/images/products/hydrating-mask.jpg",
+      large: "/images/products/hydrating-mask.jpg",
+      original: "/images/products/hydrating-mask.jpg"
     },
     alt: "Máscara hidratante em tubo"
   },
@@ -69,11 +66,10 @@ export const productImages: ProductImage[] = [
     id: 5,
     name: "Esfoliante Facial",
     images: {
-      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_5.png
-      small: "/images/products/aplicação-mockup_5.png",
-      medium: "/images/products/aplicação-mockup_5.png",
-      large: "/images/products/aplicação-mockup_5.png",
-      original: "/images/products/aplicação-mockup_5.png"
+      small: "/images/products/facial-scrub.jpg",
+      medium: "/images/products/facial-scrub.jpg",
+      large: "/images/products/facial-scrub.jpg",
+      original: "/images/products/facial-scrub.jpg"
     },
     alt: "Esfoliante facial em frasco"
   },
@@ -81,42 +77,28 @@ export const productImages: ProductImage[] = [
     id: 6,
     name: "Protetor Solar FPS 50",
     images: {
-      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_7.png
-      small: "/images/products/aplicação-mockup_7.png",
-      medium: "/images/products/aplicação-mockup_7.png",
-      large: "/images/products/aplicação-mockup_7.png",
-      original: "/images/products/aplicação-mockup_7.png"
+      small: "/images/products/sunscreen-spf50.jpg",
+      medium: "/images/products/sunscreen-spf50.jpg",
+      large: "/images/products/sunscreen-spf50.jpg",
+      original: "/images/products/sunscreen-spf50.jpg"
     },
     alt: "Protetor solar FPS 50 em frasco"
-  },
-  // 🎯 EXEMPLO: Como adicionar novo produto
-  {
-    id: 7,
-    name: "Creme Noturno Regenerador",
-    images: {
-      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_6.png
-      small: "/images/products/aplicação-mockup_6.png",
-      medium: "/images/products/aplicação-mockup_6.png",
-      large: "/images/products/aplicação-mockup_6.png",
-      original: "/images/products/aplicação-mockup_6.png"
-    },
-    alt: "Creme noturno regenerador em frasco elegante"
   }
 ];
 
-// 🎯 MELHOR PRÁTICA: Função utilitária para gerar srcset
+// 🎯 Função utilitária para gerar srcset
 export const generateSrcSet = (images: ProductImage['images']): string => {
   // 🎯 SEGUINDO SEU README: Para imagens locais, usamos a mesma imagem
   // Em produção, você pode criar versões otimizadas
   return `${images.small} 300w, ${images.medium} 600w, ${images.large} 900w`;
 };
 
-// 🎯 MELHOR PRÁTICA: Função para obter imagem por ID
+// 🎯 Função para obter imagem por ID
 export const getProductImage = (id: number): ProductImage | undefined => {
   return productImages.find(img => img.id === id);
 };
 
-// 🎯 MELHOR PRÁTICA: Placeholder seguindo seu README
+// 🎯  Placeholder seguindo seu README
 export const placeholderImage = {
   // 🎯 SEGUINDO SEU README: Placeholders inteligentes
   small: "https://via.placeholder.com/300x300/f3c8f3/e22897?text=Produto",
@@ -125,13 +107,15 @@ export const placeholderImage = {
   original: "https://via.placeholder.com/1200x1200/f3c8f3/e22897?text=Produto"
 };
 
-// 🎯 MELHOR PRÁTICA: Função para adicionar novo produto
+// 🎯  Função para adicionar novo produto
 export const addProductImage = (product: ProductImage) => {
   productImages.push(product);
 };
 
-// 🎯 MELHOR PRÁTICA: Função para validar se imagem existe
+// 🎯  Função para validar se imagem existe
 export const validateImagePath = (): boolean => {
+  // Em desenvolvimento, sempre retorna true
+  // Em produção, você pode implementar verificação real
   return true;
 };
 
