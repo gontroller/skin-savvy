@@ -53,23 +53,23 @@
   --spacing-2xl: 3rem;           /* 48px */
   --spacing-3xl: 4rem;           /* 64px */
 
-  /* ===== SISTEMA DE TIPOGRAFIA - TYPEKIT ===== */
-  /* 🎯 FONTE PRINCIPAL: Para títulos e headlines */
-  --font-family-primary: 'acumin-pro-condensed', sans-serif;
+  /* ===== SISTEMA DE TIPOGRAFIA - ACUMIN EXTRA CONDENSED ===== */
+  /* 🎯 FONTE ÚNICA: Acumin Pro Extra Condensed */
+  --font-family-primary: 'Acumin Pro Extra Condensed', sans-serif;
+
+  /* 🎯 FONTE SECUNDÁRIA: Mesma fonte para consistência */
+  --font-family-secondary: 'Acumin Pro Extra Condensed', sans-serif;
   
-  /* 🎯 FONTE SECUNDÁRIA: Para corpo de texto e descrições */
-  --font-family-secondary: 'acumin-pro-condensed', sans-serif;
-  
-  /* Tamanhos de fonte (escala 1.25) */
-  --font-size-xs: 0.75rem;       /* 12px */
-  --font-size-sm: 0.875rem;      /* 14px */
-  --font-size-base: 1rem;        /* 16px */
-  --font-size-lg: 1.125rem;      /* 18px */
-  --font-size-xl: 1.25rem;       /* 20px */
-  --font-size-2xl: 1.5rem;       /* 24px */
-  --font-size-3xl: 1.875rem;     /* 30px */
-  --font-size-4xl: 2.25rem;      /* 36px */
-  --font-size-5xl: 3rem;         /* 48px */
+  /* Tamanhos de fonte (escala 1.25) - AUMENTADOS */
+  --font-size-xs: 0.875rem;      /* 14px - era 12px */
+  --font-size-sm: 1rem;          /* 16px - era 14px */
+  --font-size-base: 1.125rem;    /* 18px - era 16px */
+  --font-size-lg: 1.25rem;       /* 20px - era 18px */
+  --font-size-xl: 1.5rem;        /* 24px - era 20px */
+  --font-size-2xl: 1.875rem;     /* 30px - era 24px */
+  --font-size-3xl: 2.25rem;      /* 36px - era 30px */
+  --font-size-4xl: 2.75rem;      /* 44px - era 36px */
+  --font-size-5xl: 3.5rem;       /* 56px - era 48px */
 
   /* Pesos de fonte */
   --font-weight-light: 300;
@@ -177,10 +177,10 @@ body {
 .tracking-wide { letter-spacing: var(--letter-spacing-wide); }
 
 /* 🎯 CLASSES DE HIERARQUIA TIPOGRÁFICA */
-/* === SISTEMA DE TIPOGRAFIA ACUMIN CONDENSED === */
+/* === SISTEMA DE TIPOGRAFIA ACUMIN EXTRA CONDENSED === */
 :root {
-  --font-family-primary: 'acumin-pro-condensed', sans-serif;
-  --font-family-secondary: 'acumin-pro-condensed', sans-serif;
+  --font-family-primary: 'Acumin Pro Extra Condensed', sans-serif;
+  --font-family-secondary: 'Acumin Pro Extra Condensed', sans-serif;
   --font-weight-black: 900;
   --font-weight-regular: 400;
 }
@@ -265,6 +265,28 @@ body {
 .acumin-italic, .body-italic {
   font-family: var(--font-family-secondary);
   font-weight: var(--font-weight-regular);
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+/* Utilitários específicos para Acumin Extra Condensed */
+.acumin-extra-condensed-black {
+  font-family: 'Acumin Pro Extra Condensed', sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 0.01em;
+}
+
+.acumin-extra-condensed-regular {
+  font-family: 'Acumin Pro Extra Condensed', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.01em;
+}
+
+.acumin-extra-condensed-italic {
+  font-family: 'Acumin Pro Extra Condensed', sans-serif;
+  font-weight: 400;
   font-style: italic;
   letter-spacing: 0.01em;
 }
@@ -438,20 +460,20 @@ a {
     padding: 0 var(--spacing-sm);
   }
 
-  /* 🎯 AJUSTES TIPOGRÁFICOS PARA MOBILE */
-  .headline-1 { font-size: var(--font-size-3xl); }
-  .headline-2 { font-size: var(--font-size-2xl); }
-  .headline-3 { font-size: var(--font-size-xl); }
-  .headline-4 { font-size: var(--font-size-lg); }
-  .headline-5 { font-size: var(--font-size-base); }
+  /* 🎯 AJUSTES TIPOGRÁFICOS PARA MOBILE - AUMENTADOS */
+  .headline-1 { font-size: var(--font-size-4xl); } /* 44px - era 30px */
+  .headline-2 { font-size: var(--font-size-3xl); } /* 36px - era 24px */
+  .headline-3 { font-size: var(--font-size-2xl); } /* 30px - era 20px */
+  .headline-4 { font-size: var(--font-size-xl); }  /* 24px - era 18px */
+  .headline-5 { font-size: var(--font-size-lg); }  /* 20px - era 16px */
   
-  .body-large { font-size: var(--font-size-base); }
-  .body-medium { font-size: var(--font-size-sm); }
-  .body-small { font-size: var(--font-size-xs); }
+  .body-large { font-size: var(--font-size-base); } /* 18px - era 16px */
+  .body-medium { font-size: var(--font-size-sm); }  /* 16px - era 14px */
+  .body-small { font-size: var(--font-size-xs); }   /* 14px - era 12px */
   
-  .button-text { font-size: var(--font-size-base); }
-  .price-text { font-size: var(--font-size-xl); }
-  .badge-text { font-size: var(--font-size-xs); }
+  .button-text { font-size: var(--font-size-base); } /* 18px - era 16px */
+  .price-text { font-size: var(--font-size-2xl); }   /* 30px - era 24px */
+  .badge-text { font-size: var(--font-size-xs); }    /* 14px - era 12px */
 }
 
 /* === ACUMIN EXTRA CONDENSED UTILITÁRIOS === */
