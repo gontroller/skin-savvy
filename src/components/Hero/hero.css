@@ -126,6 +126,21 @@
   font-weight: var(--font-weight-medium);
   margin-bottom: var(--spacing-lg);
   box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🎯 EFEITO DE BRILHO NO BADGE PRINCIPAL */
+.hero-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: productShine 4s ease-in-out infinite;
+  z-index: 1;
 }
 
 /* 🎯 HEADLINE PRINCIPAL: Fonte primária para impacto máximo */
@@ -343,11 +358,7 @@
 /* 🎯 BADGES FLUTUANTES: Integrados com a imagem */
 .floating-badge {
   position: absolute;
-  background: linear-gradient(90deg, 
-    var(--color-alert), var(--color-cta), var(--color-accent), 
-    var(--color-secondary), var(--color-primary), var(--color-alert));
-  background-size: 200% 100%;
-  animation: rainbowMove 4s linear infinite, badgeFloat 5s ease-in-out infinite;
+  background: var(--color-primary);
   color: white;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   padding: var(--spacing-sm) var(--spacing-md);
@@ -356,12 +367,27 @@
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: badgeFloat 5s ease-in-out infinite;
   z-index: 10;
   transition: all 0.3s ease;
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   min-width: 80px;
   text-align: center;
+  overflow: hidden;
+}
+
+/* 🎯 EFEITO DE BRILHO NOS BADGES FLUTUANTES */
+.floating-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: productShine 4s ease-in-out infinite;
+  z-index: 1;
 }
 
 .floating-badge:hover {
