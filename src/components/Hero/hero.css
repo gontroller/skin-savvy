@@ -8,11 +8,10 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: var(--bg-primary);
 }
 
 /* ==========================================
-   BACKGROUND E GRADIENTES
+   BACKGROUND DECORATIVO
    ========================================== */
 .hero-background {
   position: absolute;
@@ -29,92 +28,72 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    135deg,
-    var(--color-secondary) 0%,
-    var(--color-accent) 50%,
-    var(--color-primary) 100%
-  );
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
   opacity: 0.1;
-  animation: gradientShift 8s ease-in-out infinite;
 }
 
-@keyframes gradientShift {
-  0%, 100% { opacity: 0.1; }
-  50% { opacity: 0.15; }
-}
-
-/* ==========================================
-   SHAPES DECORATIVOS
-   ========================================== */
 .hero-shapes {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
 }
 
 .shape {
   position: absolute;
   border-radius: 50%;
-  background: var(--color-primary);
-  opacity: 0.1;
-  animation: float 6s ease-in-out infinite;
+  opacity: 0.05;
+  animation: float 10s ease-in-out infinite;
 }
 
 .shape-1 {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
+  background: var(--color-primary);
   top: 10%;
   right: 10%;
   animation-delay: 0s;
 }
 
 .shape-2 {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
+  background: var(--color-cta);
   bottom: 20%;
   left: 5%;
-  background: var(--color-cta);
-  animation-delay: 2s;
+  animation-delay: 3s;
 }
 
 .shape-3 {
-  width: 100px;
-  height: 100px;
-  top: 50%;
-  right: 20%;
+  width: 150px;
+  height: 150px;
   background: var(--color-accent);
-  animation-delay: 4s;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
+  top: 60%;
+  right: 20%;
+  animation-delay: 6s;
 }
 
 /* ==========================================
    CONTEÚDO PRINCIPAL
    ========================================== */
-.hero-content {
+.hero .container {
   position: relative;
   z-index: 2;
+}
+
+.hero-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-3xl);
   align-items: center;
-  padding: var(--spacing-3xl) 0;
 }
 
 /* ==========================================
-   COLUNA DE TEXTO
+   HIERARQUIA TIPOGRÁFICA - DESIGN GRÁFICO
    ========================================== */
-.hero-text {
-  animation: slideInLeft 0.8s ease-out;
-}
 
+/* 🎯 BADGE: Fonte secundária para elementos de destaque */
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -123,32 +102,28 @@
   color: var(--text-light);
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--radius-full);
+  font-family: var(--font-family-secondary);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   margin-bottom: var(--spacing-lg);
   box-shadow: var(--shadow-md);
-  animation: fadeIn 1s ease-out 0.2s both;
 }
 
-.badge-icon {
-  font-size: var(--font-size-base);
-}
-
+/* 🎯 HEADLINE PRINCIPAL: Fonte primária para impacto máximo */
 .hero-title {
+  font-family: var(--font-family-primary);
   font-size: var(--font-size-5xl);
   font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
   color: var(--text-primary);
   margin-bottom: var(--spacing-lg);
-  animation: fadeIn 1s ease-out 0.4s both;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .hero-title-highlight {
-  background: var(--bg-gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   position: relative;
+  color: var(--color-primary);
+  display: inline-block;
 }
 
 .hero-title-highlight::after {
@@ -158,27 +133,26 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background: var(--bg-gradient-primary);
+  background: var(--color-primary);
   border-radius: var(--radius-sm);
+  opacity: 0.3;
 }
 
+/* 🎯 SUBHEADLINE: Fonte secundária para legibilidade */
 .hero-subtitle {
+  font-family: var(--font-family-secondary);
   font-size: var(--font-size-lg);
-  line-height: var(--line-height-relaxed);
   color: var(--text-secondary);
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+  line-height: 1.6;
   max-width: 500px;
-  animation: fadeIn 1s ease-out 0.6s both;
 }
 
-/* ==========================================
-   CALL-TO-ACTIONS
-   ========================================== */
+/* 🎯 CALL-TO-ACTION: Fonte primária para botões */
 .hero-cta {
   display: flex;
   gap: var(--spacing-md);
-  margin-bottom: var(--spacing-xl);
-  animation: fadeIn 1s ease-out 0.8s both;
+  margin-bottom: var(--spacing-2xl);
 }
 
 .btn {
@@ -187,46 +161,30 @@
   gap: var(--spacing-sm);
   padding: var(--spacing-md) var(--spacing-xl);
   border-radius: var(--radius-lg);
+  font-family: var(--font-family-primary);
   font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-base);
   text-decoration: none;
-  transition: all var(--transition-normal);
+  transition: all 0.3s ease;
   cursor: pointer;
-  border: 2px solid transparent;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left var(--transition-slow);
-}
-
-.btn:hover::before {
-  left: 100%;
+  border: none;
 }
 
 .btn-primary {
-  background: var(--bg-gradient-primary);
+  background: var(--color-primary);
   color: var(--text-light);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
+  background: var(--color-primary);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-xl);
+  box-shadow: var(--shadow-lg);
 }
 
 .btn-secondary {
   background: transparent;
   color: var(--color-primary);
-  border-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
 .btn-secondary:hover {
@@ -236,32 +194,26 @@
 }
 
 .btn-lg {
-  padding: var(--spacing-lg) var(--spacing-2xl);
   font-size: var(--font-size-lg);
+  padding: var(--spacing-lg) var(--spacing-2xl);
 }
 
 .btn-icon {
-  font-size: var(--font-size-base);
-  transition: transform var(--transition-normal);
+  font-size: var(--font-size-md);
 }
 
-.btn:hover .btn-icon {
-  transform: translateX(4px);
-}
-
-/* ==========================================
-   ELEMENTOS DE CONFIANÇA
-   ========================================== */
+/* 🎯 ELEMENTOS DE CONFIANÇA: Fonte secundária para credibilidade */
 .hero-trust {
   display: flex;
-  gap: var(--spacing-lg);
-  animation: fadeIn 1s ease-out 1s both;
+  gap: var(--spacing-xl);
+  flex-wrap: wrap;
 }
 
 .trust-item {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
+  font-family: var(--font-family-secondary);
   font-size: var(--font-size-sm);
   color: var(--text-secondary);
   font-weight: var(--font-weight-medium);
@@ -269,31 +221,34 @@
 
 .trust-icon {
   color: var(--color-primary);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-md);
 }
 
 /* ==========================================
-   COLUNA VISUAL
+   VISUAL ELEMENTOS
    ========================================== */
 .hero-visual {
-  animation: slideInRight 0.8s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-image-container {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 500px;
+  width: 100%;
+  max-width: 400px;
 }
 
 .hero-image-placeholder {
-  position: relative;
-  width: 300px;
+  width: 100%;
   height: 400px;
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+  border-radius: var(--radius-xl);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .product-showcase {
@@ -305,23 +260,22 @@
 .product-bottle {
   width: 100%;
   height: 100%;
-  background: var(--bg-gradient-primary);
-  border-radius: var(--radius-xl);
+  background: var(--color-primary);
+  border-radius: 100px 100px 20px 20px;
   position: relative;
-  box-shadow: var(--shadow-xl);
-  animation: float 4s ease-in-out infinite;
+  box-shadow: var(--shadow-lg);
 }
 
 .product-bottle::before {
   content: '';
   position: absolute;
-  top: 20%;
+  top: -20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60%;
-  height: 60%;
-  background: rgba(255,255,255,0.2);
-  border-radius: var(--radius-lg);
+  width: 40px;
+  height: 40px;
+  background: var(--color-primary);
+  border-radius: 50%;
 }
 
 .product-glow {
@@ -329,53 +283,46 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 120%;
-  height: 120%;
+  width: 300px;
+  height: 300px;
   background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
   opacity: 0.3;
-  border-radius: 50%;
   animation: pulse 3s ease-in-out infinite;
 }
 
-/* ==========================================
-   BADGES FLUTUANTES
-   ========================================== */
+/* 🎯 BADGES FLUTUANTES: Fonte secundária para elementos informativos */
 .floating-badge {
   position: absolute;
-  background: var(--color-accent);
+  background: var(--text-light);
   color: var(--text-primary);
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   box-shadow: var(--shadow-md);
-  animation: float 5s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
 }
 
 .badge-1 {
   top: 20%;
-  left: 10%;
+  left: -20px;
   animation-delay: 0s;
 }
 
 .badge-2 {
-  top: 60%;
-  right: 15%;
-  background: var(--color-secondary);
-  animation-delay: 1.5s;
+  top: 50%;
+  right: -30px;
+  animation-delay: 1s;
 }
 
 .badge-3 {
-  bottom: 20%;
-  left: 20%;
-  background: var(--color-cta);
-  color: var(--text-light);
-  animation-delay: 3s;
+  bottom: 30%;
+  left: -10px;
+  animation-delay: 2s;
 }
 
-/* ==========================================
-   SCROLL INDICATOR
-   ========================================== */
+/* 🎯 SCROLL INDICATOR: Fonte secundária para elementos de navegação */
 .scroll-indicator {
   position: absolute;
   bottom: var(--spacing-xl);
@@ -385,9 +332,9 @@
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-sm);
-  color: var(--text-secondary);
+  font-family: var(--font-family-secondary);
   font-size: var(--font-size-sm);
-  animation: fadeIn 1s ease-out 1.2s both;
+  color: var(--text-secondary);
 }
 
 .scroll-dot {
@@ -396,6 +343,19 @@
   background: var(--color-primary);
   border-radius: 50%;
   animation: bounce 2s infinite;
+}
+
+/* ==========================================
+   ANIMAÇÕES
+   ========================================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.5; }
 }
 
 @keyframes bounce {
@@ -418,32 +378,19 @@
     font-size: var(--font-size-4xl);
   }
 
-  .hero-cta {
-    justify-content: center;
-    flex-wrap: wrap;
+  .hero-subtitle {
+    max-width: 100%;
   }
 
   .hero-trust {
     justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .hero-visual {
-    order: -1;
-  }
-
-  .hero-image-container {
-    height: 300px;
-  }
-
-  .floating-badge {
-    display: none;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 90vh;
+    min-height: 80vh;
+    padding: var(--spacing-2xl) 0;
   }
 
   .hero-title {
@@ -451,7 +398,7 @@
   }
 
   .hero-subtitle {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-md);
   }
 
   .hero-cta {
@@ -462,21 +409,25 @@
   .btn-lg {
     width: 100%;
     max-width: 300px;
-    justify-content: center;
   }
 
   .hero-trust {
     flex-direction: column;
+    align-items: center;
     gap: var(--spacing-md);
   }
 
   .hero-image-container {
-    height: 200px;
+    max-width: 300px;
+  }
+
+  .hero-image-placeholder {
+    height: 300px;
   }
 
   .product-showcase {
     width: 150px;
-    height: 200px;
+    height: 225px;
   }
 }
 
@@ -490,7 +441,8 @@
     padding: var(--spacing-xs) var(--spacing-sm);
   }
 
-  .shape {
-    display: none;
+  .floating-badge {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-xs);
   }
 } 

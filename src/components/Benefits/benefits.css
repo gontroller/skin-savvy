@@ -5,7 +5,7 @@
 .benefits {
   position: relative;
   padding: var(--spacing-3xl) 0;
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   overflow: hidden;
 }
 
@@ -33,34 +33,34 @@
 .benefit-shape {
   position: absolute;
   border-radius: 50%;
-  opacity: 0.05;
-  animation: float 8s ease-in-out infinite;
+  opacity: 0.03;
+  animation: float 10s ease-in-out infinite;
 }
 
 .shape-1 {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   background: var(--color-primary);
-  top: 10%;
-  right: 5%;
+  top: 15%;
+  right: 8%;
   animation-delay: 0s;
 }
 
 .shape-2 {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   background: var(--color-cta);
-  bottom: 20%;
-  left: 10%;
+  bottom: 25%;
+  left: 5%;
   animation-delay: 3s;
 }
 
 .shape-3 {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   background: var(--color-accent);
-  top: 60%;
-  right: 20%;
+  top: 70%;
+  right: 15%;
   animation-delay: 6s;
 }
 
@@ -73,14 +73,16 @@
 }
 
 /* ==========================================
-   HEADER DA SEÇÃO
+   HIERARQUIA TIPOGRÁFICA - DESIGN GRÁFICO
    ========================================== */
+
+/* 🎯 HEADER DA SEÇÃO: Fonte primária para títulos principais */
 .benefits-header {
   text-align: center;
   margin-bottom: var(--spacing-3xl);
-  animation: fadeIn 1s ease-out;
 }
 
+/* 🎯 BADGE: Fonte secundária para elementos de destaque */
 .benefits-badge {
   display: inline-flex;
   align-items: center;
@@ -89,29 +91,28 @@
   color: var(--text-light);
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--radius-full);
+  font-family: var(--font-family-secondary);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   margin-bottom: var(--spacing-lg);
   box-shadow: var(--shadow-md);
 }
 
+/* 🎯 TÍTULO PRINCIPAL: Fonte primária para impacto máximo */
 .benefits-title {
+  font-family: var(--font-family-primary);
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
   color: var(--text-primary);
   margin-bottom: var(--spacing-lg);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .benefits-title-highlight {
-  background: var(--bg-gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   position: relative;
+  color: var(--color-primary);
+  display: inline-block;
 }
 
 .benefits-title-highlight::after {
@@ -121,37 +122,40 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background: var(--bg-gradient-primary);
+  background: var(--color-primary);
   border-radius: var(--radius-sm);
+  opacity: 0.3;
 }
 
+/* 🎯 SUBTÍTULO: Fonte secundária para legibilidade */
 .benefits-subtitle {
+  font-family: var(--font-family-secondary);
   font-size: var(--font-size-lg);
-  line-height: var(--line-height-relaxed);
   color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 /* ==========================================
-   GRID DE BENEFÍCIOS
+   CARDS DE BENEFÍCIOS
    ========================================== */
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--spacing-xl);
+  gap: var(--spacing-2xl);
   margin-bottom: var(--spacing-3xl);
 }
 
 .benefit-card {
-  position: relative;
-  background: var(--bg-primary);
-  padding: var(--spacing-xl);
+  background: var(--bg-secondary);
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-normal);
+  padding: var(--spacing-2xl);
+  text-align: center;
+  position: relative;
   overflow: hidden;
-  animation: fadeIn 1s ease-out;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
 }
 
 .benefit-card:hover {
@@ -159,64 +163,54 @@
   box-shadow: var(--shadow-xl);
 }
 
-.benefit-card::before {
-  content: '';
+/* 🎯 ÍCONE: Elemento visual sem fonte */
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-lg);
+  color: var(--text-light);
+  font-size: var(--font-size-2xl);
+  box-shadow: var(--shadow-md);
+}
+
+/* 🎯 TÍTULO DO CARD: Fonte primária para hierarquia */
+.benefit-title {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.3;
+}
+
+/* 🎯 DESCRIÇÃO DO CARD: Fonte secundária para legibilidade */
+.benefit-description {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* 🎯 EFEITO DE BRILHO */
+.benefit-glow {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
-  background: var(--card-color);
-  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-}
-
-.benefit-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  background: var(--card-color);
-  color: var(--text-light);
-  border-radius: var(--radius-lg);
-  font-size: var(--font-size-2xl);
-  margin-bottom: var(--spacing-lg);
-  transition: all var(--transition-normal);
-}
-
-.benefit-card:hover .benefit-icon {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.benefit-title {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-md);
-  line-height: var(--line-height-tight);
-}
-
-.benefit-description {
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-relaxed);
-  color: var(--text-secondary);
-}
-
-.benefit-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
   height: 100%;
-  background: radial-gradient(circle, var(--card-color) 0%, transparent 70%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, transparent 100%);
   opacity: 0;
-  transition: opacity var(--transition-normal);
+  transition: opacity 0.3s ease;
   pointer-events: none;
 }
 
 .benefit-card:hover .benefit-glow {
-  opacity: 0.1;
+  opacity: 0.05;
 }
 
 /* ==========================================
@@ -227,48 +221,50 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--spacing-xl);
   margin-bottom: var(--spacing-3xl);
-  padding: var(--spacing-xl);
-  background: var(--bg-primary);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
-  animation: slideInUp 1s ease-out 0.5s both;
 }
 
 .stat-item {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
-  text-align: center;
+  padding: var(--spacing-lg);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
 }
 
 .stat-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 50px;
   height: 50px;
   background: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--text-light);
-  border-radius: var(--radius-lg);
   font-size: var(--font-size-lg);
-  flex-shrink: 0;
 }
 
 .stat-content {
   flex: 1;
 }
 
+/* 🎯 NÚMERO DA ESTATÍSTICA: Fonte primária para impacto */
 .stat-number {
+  font-family: var(--font-family-primary);
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
-  color: var(--text-primary);
-  line-height: var(--line-height-tight);
+  color: var(--color-primary);
+  line-height: 1;
 }
 
+/* 🎯 LABEL DA ESTATÍSTICA: Fonte secundária para legibilidade */
 .stat-label {
+  font-family: var(--font-family-secondary);
   font-size: var(--font-size-sm);
   color: var(--text-secondary);
   font-weight: var(--font-weight-medium);
+  margin-top: var(--spacing-xs);
 }
 
 /* ==========================================
@@ -276,41 +272,62 @@
    ========================================== */
 .benefits-cta {
   text-align: center;
-  padding: var(--spacing-2xl);
-  background: var(--bg-gradient-secondary);
+  background: var(--bg-secondary);
+  padding: var(--spacing-3xl);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
-  animation: fadeIn 1s ease-out 1s both;
 }
 
+/* 🎯 TÍTULO DO CTA: Fonte primária para impacto */
 .cta-title {
-  font-size: var(--font-size-3xl);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
   color: var(--text-primary);
   margin-bottom: var(--spacing-md);
+  line-height: 1.3;
 }
 
+/* 🎯 SUBTÍTULO DO CTA: Fonte secundária para legibilidade */
 .cta-subtitle {
+  font-family: var(--font-family-secondary);
   font-size: var(--font-size-lg);
   color: var(--text-secondary);
   margin-bottom: var(--spacing-xl);
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
+}
+
+/* 🎯 BOTÃO DO CTA: Fonte primária para ação */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg) var(--spacing-2xl);
+  background: var(--color-primary);
+  color: var(--text-light);
+  border-radius: var(--radius-lg);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 /* ==========================================
    ANIMAÇÕES
    ========================================== */
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
 }
 
 /* ==========================================
@@ -319,7 +336,6 @@
 @media (max-width: 1024px) {
   .benefits-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-lg);
   }
 
   .benefits-title {
@@ -327,7 +343,7 @@
   }
 
   .benefits-stats {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
 }
 
@@ -341,34 +357,33 @@
   }
 
   .benefits-subtitle {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-md);
   }
 
   .benefits-grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-md);
+    gap: var(--spacing-xl);
   }
 
   .benefit-card {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-xl);
   }
 
   .benefits-stats {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
-    padding: var(--spacing-lg);
   }
 
   .stat-item {
-    justify-content: center;
+    padding: var(--spacing-md);
   }
 
   .cta-title {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-xl);
   }
 
   .cta-subtitle {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-md);
   }
 }
 
@@ -382,18 +397,20 @@
     padding: var(--spacing-xs) var(--spacing-sm);
   }
 
-  .benefit-icon {
-    width: 50px;
-    height: 50px;
-    font-size: var(--font-size-xl);
-  }
-
   .benefit-title {
     font-size: var(--font-size-lg);
   }
 
+  .benefit-description {
+    font-size: var(--font-size-sm);
+  }
+
   .stat-number {
     font-size: var(--font-size-xl);
+  }
+
+  .stat-label {
+    font-size: var(--font-size-xs);
   }
 
   .benefit-shape {
