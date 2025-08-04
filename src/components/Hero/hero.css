@@ -22,6 +22,22 @@
   z-index: 1;
 }
 
+/* 🎯 BACKGROUND IMAGE: aplicação-mockup_1 como fundo */
+.hero-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/products/aplicação-mockup_1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1; /* 🎯 AUMENTADO: De 0.1 para 1 - mais aparente */
+  z-index: 1;
+}
+
 .hero-gradient {
   position: absolute;
   top: 0;
@@ -29,7 +45,8 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
-  opacity: 0.1;
+  opacity: 0.1; /* 🎯 REDUZIDO: De 0.3 para 0.2 - menos interferência */
+  z-index: 2;
 }
 
 .hero-shapes {
@@ -38,6 +55,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 3;
 }
 
 .shape {
@@ -79,7 +97,7 @@
    ========================================== */
 .hero .container {
   position: relative;
-  z-index: 2;
+  z-index: 4;
 }
 
 .hero-content {
@@ -242,53 +260,87 @@
 .hero-image-placeholder {
   width: 100%;
   height: 400px;
-  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+  background-image: url('/images/products/aplicação-mockup_2.png'); /* 🎯 IMAGEM REAL: Hidratante Facial Premium */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: var(--radius-xl);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-lg); /* 🎯 ADICIONADO: Sombra para destaque */
+  animation: productFloat 6s ease-in-out infinite; /* 🎯 ANIMAÇÃO: Flutuação suave */
 }
 
-.product-showcase {
-  position: relative;
-  width: 200px;
-  height: 300px;
+/* 🎯 ANIMAÇÃO DO PRODUTO: Flutuação suave */
+@keyframes productFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+    box-shadow: var(--shadow-lg);
+  }
+  25% { 
+    transform: translateY(-10px) rotate(1deg); 
+    box-shadow: 0 25px 50px -12px rgba(226, 40, 151, 0.25);
+  }
+  50% { 
+    transform: translateY(-20px) rotate(0deg); 
+    box-shadow: 0 30px 60px -12px rgba(226, 40, 151, 0.3);
+  }
+  75% { 
+    transform: translateY(-10px) rotate(-1deg); 
+    box-shadow: 0 25px 50px -12px rgba(226, 40, 151, 0.25);
+  }
 }
 
-.product-bottle {
-  width: 100%;
-  height: 100%;
-  background: var(--color-primary);
-  border-radius: 100px 100px 20px 20px;
-  position: relative;
-  box-shadow: var(--shadow-lg);
-}
-
-.product-bottle::before {
+/* 🎯 EFEITO DE BRILHO NO PRODUTO */
+.hero-image-placeholder::before {
   content: '';
   position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 40px;
-  background: var(--color-primary);
-  border-radius: 50%;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: productShine 4s ease-in-out infinite;
+  z-index: 2;
 }
 
-.product-glow {
+@keyframes productShine {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+/* 🎯 EFEITO DE PULSO NO PRODUTO */
+.hero-image-placeholder::after {
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
-  height: 300px;
+  width: 120%;
+  height: 120%;
   background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
-  opacity: 0.3;
-  animation: pulse 3s ease-in-out infinite;
+  opacity: 0;
+  animation: productPulse 3s ease-in-out infinite;
+  z-index: 1;
 }
+
+@keyframes productPulse {
+  0%, 100% { 
+    opacity: 0; 
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% { 
+    opacity: 0.1; 
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* 🎯 REMOVIDO: product-showcase e product-bottle - não são mais necessários */
+/* 🎯 REMOVIDO: product-glow - não é mais necessário */
 
 /* 🎯 BADGES FLUTUANTES: Fonte secundária para elementos informativos */
 .floating-badge {
@@ -301,25 +353,95 @@
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   box-shadow: var(--shadow-md);
-  animation: float 4s ease-in-out infinite;
+  animation: badgeFloat 5s ease-in-out infinite;
+  z-index: 10; /* 🎯 ADICIONADO: Z-index para ficar sobre a imagem */
+  transition: all 0.3s ease;
+}
+
+.floating-badge:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-lg);
+  background: var(--color-primary);
+  color: var(--text-light);
 }
 
 .badge-1 {
   top: 20%;
   left: -20px;
   animation-delay: 0s;
+  animation-name: badgeFloat1;
 }
 
 .badge-2 {
   top: 50%;
   right: -30px;
   animation-delay: 1s;
+  animation-name: badgeFloat2;
 }
 
 .badge-3 {
   bottom: 30%;
   left: -10px;
   animation-delay: 2s;
+  animation-name: badgeFloat3;
+}
+
+/* 🎯 ANIMAÇÕES ESPECÍFICAS PARA CADA BADGE */
+@keyframes badgeFloat1 {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px); 
+    opacity: 1;
+  }
+  25% { 
+    transform: translateY(-15px) translateX(5px); 
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translateY(-25px) translateX(0px); 
+    opacity: 1;
+  }
+  75% { 
+    transform: translateY(-15px) translateX(-5px); 
+    opacity: 0.8;
+  }
+}
+
+@keyframes badgeFloat2 {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px); 
+    opacity: 1;
+  }
+  25% { 
+    transform: translateY(-10px) translateX(-10px); 
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translateY(-20px) translateX(0px); 
+    opacity: 1;
+  }
+  75% { 
+    transform: translateY(-10px) translateX(10px); 
+    opacity: 0.8;
+  }
+}
+
+@keyframes badgeFloat3 {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px); 
+    opacity: 1;
+  }
+  25% { 
+    transform: translateY(-20px) translateX(5px); 
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translateY(-30px) translateX(0px); 
+    opacity: 1;
+  }
+  75% { 
+    transform: translateY(-20px) translateX(-5px); 
+    opacity: 0.8;
+  }
 }
 
 /* 🎯 SCROLL INDICATOR: Fonte secundária para elementos de navegação */

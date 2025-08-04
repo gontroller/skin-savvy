@@ -21,11 +21,11 @@ export const productImages: ProductImage[] = [
     id: 1,
     name: "Gel Limpiador Suave",
     images: {
-      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_1.png
-      small: "/images/products/aplicação-mockup_1.png",
-      medium: "/images/products/aplicação-mockup_1.png",
-      large: "/images/products/aplicação-mockup_1.png",
-      original: "/images/products/aplicação-mockup_1.png"
+      // 🎯 IMAGEM ATUALIZADA: aplicação-mockup_10.png
+      small: "/images/products/aplicação-mockup_10.png",
+      medium: "/images/products/aplicação-mockup_10.png",
+      large: "/images/products/aplicação-mockup_10.png",
+      original: "/images/products/aplicação-mockup_10.png"
     },
     alt: "Gel limpiador facial suave em frasco transparente"
   },

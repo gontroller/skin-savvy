@@ -69,12 +69,9 @@ const Hero: React.FC = () => {
           {/* Coluna da Direita - Imagem/Ilustração */}
           <div className="hero-visual">
             <div className="hero-image-container">
-              {/* Placeholder para imagem do produto */}
+              {/* 🎯 IMAGEM REAL DO PRODUTO */}
               <div className="hero-image-placeholder">
-                <div className="product-showcase">
-                  <div className="product-bottle"></div>
-                  <div className="product-glow"></div>
-                </div>
+                {/* 🎯 REMOVIDO: product-showcase, product-bottle, product-glow */}
               </div>
               
               {/* Badges flutuantes */}

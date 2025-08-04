@@ -36,8 +36,8 @@ const Products: React.FC = () => {
       description: "Limpeza profunda sem ressecar a pele. Ideal para todos os tipos de pele.",
       price: 89.90,
       originalPrice: 119.90,
-      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_1.png
-      image: "/images/products/aplicação-mockup_1.png",
+      // 🎯 IMAGEM ATUALIZADA: aplicação-mockup_10.png
+      image: "/images/products/aplicação-mockup_10.png",
       category: "cleansers",
       badge: "Mais Vendido",
       rating: 4.9,
