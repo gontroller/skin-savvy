@@ -1,13 +1,18 @@
 import React from 'react';
 import Header from './components/Header/Header';
+import Hero from './components/Hero/Hero';
+import Benefits from './components/Benefits/Benefits';
+import Products from './components/Products/Products';
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Header />
       <main>
-        <h1>Bem-Vindo(a) ao Skin Savvy!</h1>
-        <p>Explore um mundo de Skin Care que voce jamais conheceu!</p>
+        <Hero />
+        <Benefits />
+        <Products />
+        {/* Outras seções virão aqui */}
       </main>
     </div>
   );
