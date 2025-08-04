@@ -1,6 +1,119 @@
 import React, { useState } from 'react';
 import { FiShoppingCart, FiStar, FiHeart, FiEye, FiZap, FiImage } from 'react-icons/fi';
+import { getProductImage, generateSrcSet, placeholderImage } from '../../data/productImages';
 import './products.css';
+
+// 🎯 MELHOR PRÁTICA: Interface TypeScript rigorosa
+interface Product {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  originalPrice: number;
+  image: string;
+  category: string;
+  badge?: string;
+  rating: number;
+  reviews: number;
+  inStock: boolean;
+}
+
+// 🎯 MELHOR PRÁTICA: Componente separado para imagem
+interface ProductImageProps {
+  product: Product;
+  onImageLoad?: () => void;
+  onImageError?: () => void;
+}
+
+const ProductImage: React.FC<ProductImageProps> = ({ 
+  product, 
+  onImageLoad, 
+  onImageError 
+}) => {
+  // 🎯 MELHOR PRÁTICA: Estados bem definidos
+  const [imageState, setImageState] = useState<'loading' | 'loaded' | 'error'>('loading');
+
+  // 🎯 MELHOR PRÁTICA: Obter dados da imagem otimizada
+  const productImageData = getProductImage(product.id);
+  const images = productImageData?.images || placeholderImage;
+  const altText = productImageData?.alt || `${product.name} - Skin Savvy`;
+
+  const handleImageLoad = () => {
+    setImageState('loaded');
+    onImageLoad?.();
+  };
+
+  const handleImageError = () => {
+    setImageState('error');
+    onImageError?.();
+  };
+
+  return (
+    <div className="product-image">
+      {/* 🎯 MELHOR PRÁTICA: Imagem responsiva com srcset otimizado */}
+      {imageState !== 'error' && (
+        <img
+          src={images.original}
+          srcSet={generateSrcSet(images)}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          alt={altText}
+          className={`product-real-image ${imageState === 'loaded' ? 'loaded' : ''}`}
+          onLoad={handleImageLoad}
+          onError={handleImageError}
+          loading="lazy"
+          // 🎯 MELHOR PRÁTICA: Acessibilidade aprimorada
+          role="img"
+          aria-label={`Imagem do produto ${product.name}`}
+        />
+      )}
+
+      {/* 🎯 MELHOR PRÁTICA: Placeholder melhorado */}
+      {imageState === 'loading' && (
+        <div className="product-image-placeholder">
+          <div className="product-bottle-placeholder">
+            <FiImage className="placeholder-icon" />
+            <div className="loading-spinner"></div>
+          </div>
+        </div>
+      )}
+
+      {/* 🎯 MELHOR PRÁTICA: Fallback para erro */}
+      {imageState === 'error' && (
+        <div className="product-image-placeholder error">
+          <div className="product-bottle-placeholder">
+            <FiImage className="placeholder-icon" />
+            <span className="error-text">Imagem não disponível</span>
+          </div>
+        </div>
+      )}
+
+      {/* 🎯 MELHOR PRÁTICA: Overlay com acessibilidade */}
+      <div className="product-overlay">
+        <button 
+          className="overlay-btn" 
+          title="Ver detalhes do produto"
+          aria-label={`Ver detalhes de ${product.name}`}
+        >
+          <FiEye />
+        </button>
+        <button 
+          className="overlay-btn" 
+          title="Adicionar aos favoritos"
+          aria-label={`Adicionar ${product.name} aos favoritos`}
+        >
+          <FiHeart />
+        </button>
+      </div>
+
+      {/* 🎯 MELHOR PRÁTICA: Indicador de estoque acessível */}
+      {!product.inStock && (
+        <div className="stock-indicator" role="status" aria-live="polite">
+          <span>Esgotado</span>
+        </div>
+      )}
+    </div>
+  );
+};
 
 const Products: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -13,19 +126,16 @@ const Products: React.FC = () => {
     { id: 'masks', name: 'Máscaras', icon: <FiZap /> }
   ];
 
-  const products = [
+  // 🎯 MELHOR PRÁTICA: Dados tipados
+  const products: Product[] = [
     {
       id: 1,
       name: "Gel Limpiador Suave",
       description: "Limpeza profunda sem ressecar a pele. Ideal para todos os tipos de pele.",
       price: 89.90,
       originalPrice: 119.90,
-      // Opção 1: Imagem local (salva em public/images/)
+      // 🎯 MELHOR PRÁTICA: URLs de imagens otimizadas
       image: "/images/products/cleanser-gel.jpg",
-      // Opção 2: Imagem externa (CDN)
-      // image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop",
-      // Opção 3: Placeholder inteligente
-      // image: "https://via.placeholder.com/400x400/f3c8f3/e22897?text=Gel+Limpiador",
       category: "cleansers",
       badge: "Mais Vendido",
       rating: 4.9,
@@ -99,71 +209,17 @@ const Products: React.FC = () => {
     }
   ];
 
+  // 🎯 MELHOR PRÁTICA: Filtro otimizado
   const filteredProducts = activeCategory === 'all' 
     ? products 
     : products.filter(product => product.category === activeCategory);
 
-  const formatPrice = (price: number) => {
+  // 🎯 MELHOR PRÁTICA: Formatação de preço reutilizável
+  const formatPrice = (price: number): string => {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
       currency: 'BRL'
     }).format(price);
-  };
-
-  // Componente de imagem com fallback
-  const ProductImage: React.FC<{ product: any }> = ({ product }) => {
-    const [imageLoaded, setImageLoaded] = useState(false);
-    const [imageError, setImageError] = useState(false);
-
-    const handleImageLoad = () => {
-      setImageLoaded(true);
-    };
-
-    const handleImageError = () => {
-      setImageError(true);
-    };
-
-    return (
-      <div className="product-image">
-        {/* Imagem Real */}
-        {!imageError && (
-          <img
-            src={product.image}
-            alt={`${product.name} - Skin Savvy`}
-            className={`product-real-image ${imageLoaded ? 'loaded' : ''}`}
-            onLoad={handleImageLoad}
-            onError={handleImageError}
-            loading="lazy" // Lazy loading para performance
-          />
-        )}
-
-        {/* Placeholder enquanto carrega ou se der erro */}
-        {(!imageLoaded || imageError) && (
-          <div className="product-image-placeholder">
-            <div className="product-bottle-placeholder">
-              <FiImage className="placeholder-icon" />
-            </div>
-          </div>
-        )}
-
-        {/* Overlay de Ações */}
-        <div className="product-overlay">
-          <button className="overlay-btn" title="Ver detalhes">
-            <FiEye />
-          </button>
-          <button className="overlay-btn" title="Adicionar aos favoritos">
-            <FiHeart />
-          </button>
-        </div>
-
-        {/* Indicador de Estoque */}
-        {!product.inStock && (
-          <div className="stock-indicator">
-            <span>Esgotado</span>
-          </div>
-        )}
-      </div>
-    );
   };
 
   return (
@@ -213,7 +269,11 @@ const Products: React.FC = () => {
               )}
 
               {/* Imagem do Produto */}
-              <ProductImage product={product} />
+              <ProductImage 
+                product={product} 
+                onImageLoad={() => {}} // Placeholder for now
+                onImageError={() => {}} // Placeholder for now
+              />
 
               {/* Informações do Produto */}
               <div className="product-info">
