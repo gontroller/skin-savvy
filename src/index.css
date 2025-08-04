@@ -1,0 +1,261 @@
+/* ==========================================
+   SISTEMA DE DESIGN - SKIN SAVVY
+   ========================================== */
+
+/* ==========================================
+   RESET E BASE
+   ========================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================
+   CSS VARIABLES (CUSTOM PROPERTIES)
+   ========================================== */
+:root {
+  /* ===== PALETA DE CORES PRINCIPAL ===== */
+  --color-primary: #E22897;      /* Magenta vibrante - cor principal */
+  --color-secondary: #F3C8F3;    /* Lavanda suave - cor secundária */
+  --color-accent: #FBE9D1;       /* Pêssego claro - cor de destaque */
+  --color-cta: #FD9651;          /* Laranja - call-to-action */
+  --color-alert: #EF512C;        /* Vermelho-laranja - alertas */
+
+  /* ===== CORES DE TEXTO ===== */
+  --text-primary: #1A1A1A;       /* Texto principal - quase preto */
+  --text-secondary: #666666;     /* Texto secundário - cinza médio */
+  --text-light: #FFFFFF;         /* Texto claro - branco */
+  --text-muted: #999999;         /* Texto suave - cinza claro */
+
+  /* ===== CORES DE FUNDO ===== */
+  --bg-primary: #FFFFFF;         /* Fundo principal - branco */
+  --bg-secondary: #F8F8F8;       /* Fundo secundário - cinza muito claro */
+  --bg-accent: var(--color-accent); /* Fundo de destaque */
+  --bg-gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-cta) 100%);
+  --bg-gradient-secondary: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+
+  /* ===== CORES DE ESTADO ===== */
+  --color-success: #10B981;      /* Verde - sucesso */
+  --color-error: var(--color-alert); /* Vermelho - erro */
+  --color-warning: #F59E0B;      /* Amarelo - aviso */
+  --color-info: #3B82F6;         /* Azul - informação */
+
+  /* ===== SISTEMA DE ESPAÇAMENTO (8px GRID) ===== */
+  --spacing-xs: 0.25rem;         /* 4px */
+  --spacing-sm: 0.5rem;          /* 8px */
+  --spacing-md: 1rem;            /* 16px */
+  --spacing-lg: 1.5rem;          /* 24px */
+  --spacing-xl: 2rem;            /* 32px */
+  --spacing-2xl: 3rem;           /* 48px */
+  --spacing-3xl: 4rem;           /* 64px */
+
+  /* ===== SISTEMA DE TIPOGRAFIA ===== */
+  --font-family-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-secondary: 'Poppins', var(--font-family-primary);
+  
+  /* Tamanhos de fonte (escala 1.25) */
+  --font-size-xs: 0.75rem;       /* 12px */
+  --font-size-sm: 0.875rem;      /* 14px */
+  --font-size-base: 1rem;        /* 16px */
+  --font-size-lg: 1.125rem;      /* 18px */
+  --font-size-xl: 1.25rem;       /* 20px */
+  --font-size-2xl: 1.5rem;       /* 24px */
+  --font-size-3xl: 1.875rem;     /* 30px */
+  --font-size-4xl: 2.25rem;      /* 36px */
+  --font-size-5xl: 3rem;         /* 48px */
+
+  /* Pesos de fonte */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Altura de linha */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ===== SISTEMA DE BORDER RADIUS ===== */
+  --radius-sm: 0.25rem;          /* 4px */
+  --radius-md: 0.5rem;           /* 8px */
+  --radius-lg: 1rem;             /* 16px */
+  --radius-xl: 1.5rem;           /* 24px */
+  --radius-full: 9999px;         /* Círculo */
+
+  /* ===== SISTEMA DE SOMBRAS ===== */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* ===== ANIMAÇÕES E TRANSITIONS ===== */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
+
+  /* ===== Z-INDEX SCALE ===== */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}
+
+/* ==========================================
+   CONFIGURAÇÕES BASE
+   ========================================== */
+html {
+  font-size: 16px; /* Base para rem units */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth; /* Scroll suave para âncoras */
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+}
+
+/* ==========================================
+   ELEMENTOS BASE
+   ========================================== */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==========================================
+   UTILITÁRIOS DE TEXTO
+   ========================================== */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-light { color: var(--text-light); }
+.text-muted { color: var(--text-muted); }
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* ==========================================
+   UTILITÁRIOS DE ESPAÇAMENTO
+   ========================================== */
+.m-0 { margin: 0; }
+.m-xs { margin: var(--spacing-xs); }
+.m-sm { margin: var(--spacing-sm); }
+.m-md { margin: var(--spacing-md); }
+.m-lg { margin: var(--spacing-lg); }
+.m-xl { margin: var(--spacing-xl); }
+
+.p-0 { padding: 0; }
+.p-xs { padding: var(--spacing-xs); }
+.p-sm { padding: var(--spacing-sm); }
+.p-md { padding: var(--spacing-md); }
+.p-lg { padding: var(--spacing-lg); }
+.p-xl { padding: var(--spacing-xl); }
+
+/* ==========================================
+   UTILITÁRIOS DE FLEXBOX
+   ========================================== */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+
+/* ==========================================
+   CONTAINER RESPONSIVO
+   ========================================== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+/* ==========================================
+   ISOLAMENTO DO ROOT
+   ========================================== */
+#root {
+  isolation: isolate;
+}
+
+/* ==========================================
+   ANIMAÇÕES GLOBAIS
+   ========================================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* ==========================================
+   CLASSES DE ANIMAÇÃO
+   ========================================== */
+.animate-fade-in { animation: fadeIn 0.6s ease-out; }
+.animate-slide-left { animation: slideInLeft 0.6s ease-out; }
+.animate-slide-right { animation: slideInRight 0.6s ease-out; }
+.animate-pulse { animation: pulse 2s infinite; }
+
+/* ==========================================
+   RESPONSIVIDADE
+   ========================================== */
+@media (max-width: 768px) {
+  :root {
+    --spacing-xl: 1.5rem;        /* Reduz espaçamento em mobile */
+    --spacing-2xl: 2rem;
+    --spacing-3xl: 2.5rem;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+}
