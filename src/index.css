@@ -55,10 +55,10 @@
 
   /* ===== SISTEMA DE TIPOGRAFIA - TYPEKIT ===== */
   /* 🎯 FONTE PRINCIPAL: Para títulos e headlines */
-  --font-family-primary: 'acumin-pro-extra-condensed', sans-serif;
+  --font-family-primary: 'acumin-pro-condensed', sans-serif;
   
   /* 🎯 FONTE SECUNDÁRIA: Para corpo de texto e descrições */
-  --font-family-secondary: 'acumin-pro-extra-condensed', sans-serif;
+  --font-family-secondary: 'acumin-pro-condensed', sans-serif;
   
   /* Tamanhos de fonte (escala 1.25) */
   --font-size-xs: 0.75rem;       /* 12px */
@@ -177,10 +177,10 @@ body {
 .tracking-wide { letter-spacing: var(--letter-spacing-wide); }
 
 /* 🎯 CLASSES DE HIERARQUIA TIPOGRÁFICA */
-/* === SISTEMA DE TIPOGRAFIA ACUMIN EXTRA CONDENSED === */
+/* === SISTEMA DE TIPOGRAFIA ACUMIN CONDENSED === */
 :root {
-  --font-family-primary: 'acumin-pro-extra-condensed', sans-serif;
-  --font-family-secondary: 'acumin-pro-extra-condensed', sans-serif;
+  --font-family-primary: 'acumin-pro-condensed', sans-serif;
+  --font-family-secondary: 'acumin-pro-condensed', sans-serif;
   --font-weight-black: 900;
   --font-weight-regular: 400;
 }

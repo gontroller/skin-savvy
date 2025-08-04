@@ -1,0 +1,218 @@
+/* ==========================================
+   FONTES ACUMIN PRO - LOCAIS
+   ========================================== */
+
+/* ===== ACUMIN PRO CONDENSED ===== */
+
+/* Condensed Regular */
+@font-face {
+  font-family: 'Acumin Pro Condensed';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Condensed.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Condensed Italic */
+@font-face {
+  font-family: 'Acumin Pro Condensed';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Condensed_Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Condensed Bold */
+@font-face {
+  font-family: 'Acumin Pro Condensed';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Condensed_Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Condensed Bold Italic */
+@font-face {
+  font-family: 'Acumin Pro Condensed';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Condensed_Bold_Italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Condensed Black */
+@font-face {
+  font-family: 'Acumin Pro Condensed';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Condensed_Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Condensed Black Italic */
+@font-face {
+  font-family: 'Acumin Pro Condensed';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Condensed_Black_Italic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Condensed Light */
+@font-face {
+  font-family: 'Acumin Pro Condensed';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Condensed_Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Condensed Light Italic */
+@font-face {
+  font-family: 'Acumin Pro Condensed';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Condensed_Light_Italic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Condensed Medium */
+@font-face {
+  font-family: 'Acumin Pro Condensed';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Condensed_Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Condensed Medium Italic */
+@font-face {
+  font-family: 'Acumin Pro Condensed';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Condensed_Medium_Italic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Condensed Semibold */
+@font-face {
+  font-family: 'Acumin Pro Condensed';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Condensed_Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Condensed Semibold Italic */
+@font-face {
+  font-family: 'Acumin Pro Condensed';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Condensed_Semibold_Italic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ===== ACUMIN PRO EXTRA CONDENSED ===== */
+
+/* Extra Condensed Regular */
+@font-face {
+  font-family: 'Acumin Pro Extra Condensed';
+  src: url('/fonts/fonnts.com-Acumin_Pro_ExtraCondensed.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Extra Condensed Italic */
+@font-face {
+  font-family: 'Acumin Pro Extra Condensed';
+  src: url('/fonts/fonnts.com-Acumin_Pro_ExtraCondensed_Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Extra Condensed Bold */
+@font-face {
+  font-family: 'Acumin Pro Extra Condensed';
+  src: url('/fonts/fonnts.com-Acumin_Pro_ExtraCondensed_Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Extra Condensed Black */
+@font-face {
+  font-family: 'Acumin Pro Extra Condensed';
+  src: url('/fonts/fonnts.com-Acumin_Pro_ExtraCondensed_Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== ACUMIN PRO WIDE ===== */
+
+/* Wide Regular */
+@font-face {
+  font-family: 'Acumin Pro Wide';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Wide.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Wide Bold */
+@font-face {
+  font-family: 'Acumin Pro Wide';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Wide_Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Wide Black */
+@font-face {
+  font-family: 'Acumin Pro Wide';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Wide_Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== ACUMIN PRO REGULAR ===== */
+
+/* Regular */
+@font-face {
+  font-family: 'Acumin Pro';
+  src: url('/fonts/fonnts.com-Acumin_Pro.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Italic */
+@font-face {
+  font-family: 'Acumin Pro';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'Acumin Pro';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Black */
+@font-face {
+  font-family: 'Acumin Pro';
+  src: url('/fonts/fonnts.com-Acumin_Pro_Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+} 
