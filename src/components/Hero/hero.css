@@ -34,7 +34,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 1; /* 🎯 AUMENTADO: De 0.1 para 1 - mais aparente */
+  opacity: 0.3;
   z-index: 1;
 }
 
@@ -45,7 +45,7 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
-  opacity: 0.1; /* 🎯 REDUZIDO: De 0.3 para 0.2 - menos interferência */
+  opacity: 0.1;
   z-index: 2;
 }
 
@@ -117,7 +117,8 @@
   align-items: center;
   gap: var(--spacing-sm);
   background: var(--color-primary);
-  color: var(--text-light);
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--radius-full);
   font-family: var(--font-family-secondary);
@@ -260,7 +261,7 @@
 .hero-image-placeholder {
   width: 100%;
   height: 400px;
-  background-image: url('/images/products/aplicação-mockup_2.png'); /* 🎯 IMAGEM REAL: Hidratante Facial Premium */
+  background-image: url('/images/products/aplicação-mockup_1.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -270,8 +271,8 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-lg); /* 🎯 ADICIONADO: Sombra para destaque */
-  animation: productFloat 6s ease-in-out infinite; /* 🎯 ANIMAÇÃO: Flutuação suave */
+  box-shadow: var(--shadow-lg);
+  animation: productFloat 6s ease-in-out infinite;
 }
 
 /* 🎯 ANIMAÇÃO DO PRODUTO: Flutuação suave */
@@ -339,108 +340,114 @@
   }
 }
 
-/* 🎯 REMOVIDO: product-showcase e product-bottle - não são mais necessários */
-/* 🎯 REMOVIDO: product-glow - não é mais necessário */
-
-/* 🎯 BADGES FLUTUANTES: Fonte secundária para elementos informativos */
+/* 🎯 BADGES FLUTUANTES: Integrados com a imagem */
 .floating-badge {
   position: absolute;
-  background: var(--text-light);
-  color: var(--text-primary);
-  padding: var(--spacing-xs) var(--spacing-sm);
+  background: linear-gradient(90deg, 
+    var(--color-alert), var(--color-cta), var(--color-accent), 
+    var(--color-secondary), var(--color-primary), var(--color-alert));
+  background-size: 200% 100%;
+  animation: rainbowMove 4s linear infinite, badgeFloat 5s ease-in-out infinite;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--radius-sm);
   font-family: var(--font-family-secondary);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  box-shadow: var(--shadow-md);
-  animation: badgeFloat 5s ease-in-out infinite;
-  z-index: 10; /* 🎯 ADICIONADO: Z-index para ficar sobre a imagem */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
   transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-width: 80px;
+  text-align: center;
 }
 
 .floating-badge:hover {
   transform: scale(1.1);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 24px rgba(226, 40, 151, 0.3);
   background: var(--color-primary);
   color: var(--text-light);
+  border-color: var(--color-primary);
 }
 
 .badge-1 {
-  top: 20%;
-  left: -20px;
+  top: 15%;
+  left: -15px;
   animation-delay: 0s;
   animation-name: badgeFloat1;
 }
 
 .badge-2 {
-  top: 50%;
-  right: -30px;
+  top: 45%;
+  right: -25px;
   animation-delay: 1s;
   animation-name: badgeFloat2;
 }
 
 .badge-3 {
-  bottom: 30%;
-  left: -10px;
+  bottom: 25%;
+  left: -8px;
   animation-delay: 2s;
   animation-name: badgeFloat3;
 }
 
-/* 🎯 ANIMAÇÕES ESPECÍFICAS PARA CADA BADGE */
+/* 🎯 ANIMAÇÕES MAIS SUAVES E INTEGRADAS */
 @keyframes badgeFloat1 {
   0%, 100% { 
-    transform: translateY(0px) translateX(0px); 
-    opacity: 1;
+    transform: translateY(0px) translateX(0px) scale(1); 
+    opacity: 0.9;
   }
   25% { 
-    transform: translateY(-15px) translateX(5px); 
-    opacity: 0.8;
-  }
-  50% { 
-    transform: translateY(-25px) translateX(0px); 
+    transform: translateY(-12px) translateX(3px) scale(1.02); 
     opacity: 1;
   }
+  50% { 
+    transform: translateY(-20px) translateX(0px) scale(1); 
+    opacity: 0.9;
+  }
   75% { 
-    transform: translateY(-15px) translateX(-5px); 
-    opacity: 0.8;
+    transform: translateY(-12px) translateX(-3px) scale(1.02); 
+    opacity: 1;
   }
 }
 
 @keyframes badgeFloat2 {
   0%, 100% { 
-    transform: translateY(0px) translateX(0px); 
-    opacity: 1;
+    transform: translateY(0px) translateX(0px) scale(1); 
+    opacity: 0.9;
   }
   25% { 
-    transform: translateY(-10px) translateX(-10px); 
-    opacity: 0.8;
-  }
-  50% { 
-    transform: translateY(-20px) translateX(0px); 
+    transform: translateY(-8px) translateX(-8px) scale(1.02); 
     opacity: 1;
   }
+  50% { 
+    transform: translateY(-16px) translateX(0px) scale(1); 
+    opacity: 0.9;
+  }
   75% { 
-    transform: translateY(-10px) translateX(10px); 
-    opacity: 0.8;
+    transform: translateY(-8px) translateX(8px) scale(1.02); 
+    opacity: 1;
   }
 }
 
 @keyframes badgeFloat3 {
   0%, 100% { 
-    transform: translateY(0px) translateX(0px); 
-    opacity: 1;
+    transform: translateY(0px) translateX(0px) scale(1); 
+    opacity: 0.9;
   }
   25% { 
-    transform: translateY(-20px) translateX(5px); 
-    opacity: 0.8;
-  }
-  50% { 
-    transform: translateY(-30px) translateX(0px); 
+    transform: translateY(-15px) translateX(3px) scale(1.02); 
     opacity: 1;
   }
+  50% { 
+    transform: translateY(-25px) translateX(0px) scale(1); 
+    opacity: 0.9;
+  }
   75% { 
-    transform: translateY(-20px) translateX(-5px); 
-    opacity: 0.8;
+    transform: translateY(-15px) translateX(-3px) scale(1.02); 
+    opacity: 1;
   }
 }
 
@@ -473,6 +480,11 @@
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
+}
+
+@keyframes rainbowMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
 }
 
 @keyframes pulse {
@@ -545,11 +557,6 @@
 
   .hero-image-placeholder {
     height: 300px;
-  }
-
-  .product-showcase {
-    width: 150px;
-    height: 225px;
   }
 }
 
