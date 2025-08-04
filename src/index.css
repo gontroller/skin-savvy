@@ -52,9 +52,12 @@
   --spacing-2xl: 3rem;           /* 48px */
   --spacing-3xl: 4rem;           /* 64px */
 
-  /* ===== SISTEMA DE TIPOGRAFIA ===== */
-  --font-family-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-family-secondary: 'Poppins', var(--font-family-primary);
+  /* ===== SISTEMA DE TIPOGRAFIA - TYPEKIT ===== */
+  /* 🎯 FONTE PRINCIPAL: Para títulos e headlines */
+  --font-family-primary: 'futura-pt', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* 🎯 FONTE SECUNDÁRIA: Para corpo de texto e descrições */
+  --font-family-secondary: 'source-sans-pro', var(--font-family-primary);
   
   /* Tamanhos de fonte (escala 1.25) */
   --font-size-xs: 0.75rem;       /* 12px */
@@ -118,13 +121,33 @@ html {
 }
 
 body {
-  font-family: var(--font-family-primary);
+  font-family: var(--font-family-secondary);
   font-size: var(--font-size-base);
   line-height: var(--line-height-normal);
   color: var(--text-primary);
   background-color: var(--bg-primary);
   min-height: 100vh;
 }
+
+/* ==========================================
+   CLASSES DE TIPOGRAFIA
+   ========================================== */
+/* 🎯 FONTE PRINCIPAL: Para títulos e headlines */
+.font-primary {
+  font-family: var(--font-family-primary);
+}
+
+/* 🎯 FONTE SECUNDÁRIA: Para corpo de texto */
+.font-secondary {
+  font-family: var(--font-family-secondary);
+}
+
+/* 🎯 UTILITÁRIOS DE PESO */
+.font-light { font-weight: var(--font-weight-light); }
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
 
 /* ==========================================
    ELEMENTOS BASE

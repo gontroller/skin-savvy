@@ -21,11 +21,11 @@ export const productImages: ProductImage[] = [
     id: 1,
     name: "Gel Limpiador Suave",
     images: {
-      // 🎯 SEGUINDO SEU README: Imagens locais em public/images/products/
-      small: "/images/products/cleanser-gel.jpg",
-      medium: "/images/products/cleanser-gel.jpg",
-      large: "/images/products/cleanser-gel.jpg",
-      original: "/images/products/cleanser-gel.jpg"
+      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_1.png
+      small: "/images/products/aplicação-mockup_1.png",
+      medium: "/images/products/aplicação-mockup_1.png",
+      large: "/images/products/aplicação-mockup_1.png",
+      original: "/images/products/aplicação-mockup_1.png"
     },
     alt: "Gel limpiador facial suave em frasco transparente"
   },
@@ -33,10 +33,11 @@ export const productImages: ProductImage[] = [
     id: 2,
     name: "Hidratante Facial Premium",
     images: {
-      small: "/images/products/moisturizer-premium.jpg",
-      medium: "/images/products/moisturizer-premium.jpg",
-      large: "/images/products/moisturizer-premium.jpg",
-      original: "/images/products/moisturizer-premium.jpg"
+      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_2.png
+      small: "/images/products/aplicação-mockup_2.png",
+      medium: "/images/products/aplicação-mockup_2.png",
+      large: "/images/products/aplicação-mockup_2.png",
+      original: "/images/products/aplicação-mockup_2.png"
     },
     alt: "Hidratante facial premium em frasco elegante"
   },
@@ -44,10 +45,11 @@ export const productImages: ProductImage[] = [
     id: 3,
     name: "Sérum Vitamina C",
     images: {
-      small: "/images/products/vitamin-c-serum.jpg",
-      medium: "/images/products/vitamin-c-serum.jpg",
-      large: "/images/products/vitamin-c-serum.jpg",
-      original: "/images/products/vitamin-c-serum.jpg"
+      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_3.png
+      small: "/images/products/aplicação-mockup_3.png",
+      medium: "/images/products/aplicação-mockup_3.png",
+      large: "/images/products/aplicação-mockup_3.png",
+      original: "/images/products/aplicação-mockup_3.png"
     },
     alt: "Sérum de vitamina C em frasco âmbar"
   },
@@ -55,10 +57,11 @@ export const productImages: ProductImage[] = [
     id: 4,
     name: "Máscara Hidratante",
     images: {
-      small: "/images/products/hydrating-mask.jpg",
-      medium: "/images/products/hydrating-mask.jpg",
-      large: "/images/products/hydrating-mask.jpg",
-      original: "/images/products/hydrating-mask.jpg"
+      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_4.png
+      small: "/images/products/aplicação-mockup_4.png",
+      medium: "/images/products/aplicação-mockup_4.png",
+      large: "/images/products/aplicação-mockup_4.png",
+      original: "/images/products/aplicação-mockup_4.png"
     },
     alt: "Máscara hidratante em tubo"
   },
@@ -66,10 +69,11 @@ export const productImages: ProductImage[] = [
     id: 5,
     name: "Esfoliante Facial",
     images: {
-      small: "/images/products/facial-scrub.jpg",
-      medium: "/images/products/facial-scrub.jpg",
-      large: "/images/products/facial-scrub.jpg",
-      original: "/images/products/facial-scrub.jpg"
+      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_5.png
+      small: "/images/products/aplicação-mockup_5.png",
+      medium: "/images/products/aplicação-mockup_5.png",
+      large: "/images/products/aplicação-mockup_5.png",
+      original: "/images/products/aplicação-mockup_5.png"
     },
     alt: "Esfoliante facial em frasco"
   },
@@ -77,10 +81,11 @@ export const productImages: ProductImage[] = [
     id: 6,
     name: "Protetor Solar FPS 50",
     images: {
-      small: "/images/products/sunscreen-spf50.jpg",
-      medium: "/images/products/sunscreen-spf50.jpg",
-      large: "/images/products/sunscreen-spf50.jpg",
-      original: "/images/products/sunscreen-spf50.jpg"
+      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_7.png
+      small: "/images/products/aplicação-mockup_7.png",
+      medium: "/images/products/aplicação-mockup_7.png",
+      large: "/images/products/aplicação-mockup_7.png",
+      original: "/images/products/aplicação-mockup_7.png"
     },
     alt: "Protetor solar FPS 50 em frasco"
   },
@@ -89,10 +94,11 @@ export const productImages: ProductImage[] = [
     id: 7,
     name: "Creme Noturno Regenerador",
     images: {
-      small: "/images/products/creme-noturno.jpg",
-      medium: "/images/products/creme-noturno.jpg",
-      large: "/images/products/creme-noturno.jpg",
-      original: "/images/products/creme-noturno.jpg"
+      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_6.png
+      small: "/images/products/aplicação-mockup_6.png",
+      medium: "/images/products/aplicação-mockup_6.png",
+      large: "/images/products/aplicação-mockup_6.png",
+      original: "/images/products/aplicação-mockup_6.png"
     },
     alt: "Creme noturno regenerador em frasco elegante"
   }

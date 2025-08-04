@@ -20,9 +20,21 @@ function Header() {
                 </button>
             </div>
 
-            {/* Coluna da Esquerda */}
+            {/* 🎯 LOGO: Agora usando imagem */}
             <div className='logo-container'>
-                <div className='logo'>Skin Savvy</div>
+                {/* 🎯 MELHOR PRÁTICA: Logo como imagem */}
+                <img 
+                    src="/images/logo/logo-horizontal_2.svg.svg" 
+                    alt="Skin Savvy - Logo"
+                    className="logo-image"
+                    onError={(e) => {
+                        // 🎯 FALLBACK: Se imagem falhar, mostra texto
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.nextElementSibling?.classList.remove('logo-fallback');
+                    }}
+                />
+                {/* 🎯 FALLBACK: Texto como backup */}
+                <div className='logo logo-fallback'></div>
             </div>
 
             {/* Coluna da Direita */}

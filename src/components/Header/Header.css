@@ -23,14 +23,40 @@
 }
 .logo-container {
     justify-content: center;
+    align-items: center;
 }
 .header-right {
     justify-content: flex-end;
 }
 
+/* 🎯 MELHOR PRÁTICA: Logo como imagem */
+.logo-image {
+    height: 40px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+    /* 🎯 OTIMIZAÇÃO PARA SVG */
+    filter: none;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+    /* 🎯 EFEITO HOVER PARA SVG */
+    filter: brightness(1.1);
+}
+
+/* 🎯 FALLBACK: Logo como texto (backup) */
 .logo {
+    font-family: var(--font-family-primary);
     font-size: 1.5rem;
     font-weight: bold;
+    color: var(--color-primary, #e22897);
+    display: none; /* Escondido por padrão */
+}
+
+.logo.logo-fallback {
+    display: block; /* Mostra quando imagem falha */
 }
 
 /* Estilo dos botoes de icone */
@@ -77,6 +103,7 @@
     align-items: center;
     padding: 0.75rem 1.5rem;
     border-bottom: 1px solid #eee;
+    font-family: var(--font-family-primary);
     font-size: 1.1rem;
     font-weight: 600;
 }
@@ -88,6 +115,36 @@
     flex-direction: column;
 }
 
+.navigation-menu li a {
+    font-family: var(--font-family-secondary);
+    padding: 0.75rem 1.5rem;
+    display: block;
+    transition: background-color 0.2s ease;
+}
+
 .navigation-menu li a:hover {
     background-color: #f0f0f0;
+}
+
+/* 🎯 RESPONSIVIDADE: Logo em telas menores */
+@media (max-width: 768px) {
+    .logo-image {
+        height: 32px;
+        max-width: 150px;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-image {
+        height: 28px;
+        max-width: 120px;
+    }
+    
+    .logo {
+        font-size: 1rem;
+    }
 }
