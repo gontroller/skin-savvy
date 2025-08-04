@@ -1,0 +1,10 @@
+[33mb06bb80[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m refactor: atualiza App.tsx e corrige erros CSS no header
+[33m3891550[m docs: adiciona estrutura de imagens e documentação
+[33m17e175d[m feat: implementa seção Products com sistema de imagens inteligente
+[33m10aa6d3[m feat: adiciona seção Benefits com cards de benefícios interativos
+[33mc5c748a[m feat: implementa Hero Section com design moderno e conversão otimizada
+[33m7e73266[m finally, i made a global.css hehe
+[33mb26742c[m react-icons added
+[33m0437830[m header section
+[33m5c68bf4[m Header
+[33mda9c5fd[m global.css
