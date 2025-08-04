@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { FiMenu, FiShoppingCart, FiX } from "react-icons/fi";
+import { useState } from 'react';
+import { FiMenu, FiX, FiSearch, FiShoppingCart, FiUser } from 'react-icons/fi';
 import './header.css';
 
 function Header() {

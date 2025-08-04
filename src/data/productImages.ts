@@ -131,9 +131,7 @@ export const addProductImage = (product: ProductImage) => {
 };
 
 // 🎯 MELHOR PRÁTICA: Função para validar se imagem existe
-export const validateImagePath = (path: string): boolean => {
-  // Em desenvolvimento, sempre retorna true
-  // Em produção, você pode implementar verificação real
+export const validateImagePath = (): boolean => {
   return true;
 };
 
