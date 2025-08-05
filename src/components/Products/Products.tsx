@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FiShoppingCart, FiStar, FiHeart, FiEye, FiZap, FiImage } from 'react-icons/fi';
 import './products.css';
 
-// 🎯 MELHOR PRÁTICA: Dados tipados
+// 🎯 Dados tipados
 interface Product {
   id: number;
   name: string;
@@ -28,7 +28,7 @@ const Products: React.FC = () => {
     { id: 'masks', name: 'Máscaras', icon: <FiZap /> }
   ];
 
-  // 🎯 MELHOR PRÁTICA: Dados tipados
+  // 🎯 Dados tipados
   const products: Product[] = [
     {
       id: 1,
@@ -36,8 +36,8 @@ const Products: React.FC = () => {
       description: "Limpeza profunda sem ressecar a pele. Ideal para todos os tipos de pele.",
       price: 89.90,
       originalPrice: 119.90,
-      // 🎯 IMAGEM ATUALIZADA: aplicação-mockup_10.png
-      image: "/images/products/aplicação-mockup_10.png",
+    
+      image: "https://via.placeholder.com/400x400/f3c8f3/e22897?text=Gel+Limpiador",
       category: "cleansers",
       badge: "Mais Vendido",
       rating: 4.9,
@@ -50,8 +50,8 @@ const Products: React.FC = () => {
       description: "Hidratação intensa com ácido hialurônico. 24h de hidratação.",
       price: 129.90,
       originalPrice: 159.90,
-      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_2.png
-      image: "/images/products/aplicação-mockup_2.png",
+    
+      image: "https://via.placeholder.com/400x400/f3c8f3/e22897?text=Hidratante+Premium",
       category: "moisturizers",
       badge: "Novo",
       rating: 4.8,
@@ -64,8 +64,8 @@ const Products: React.FC = () => {
       description: "Clareamento e uniformização da pele. Antioxidante poderoso.",
       price: 149.90,
       originalPrice: 189.90,
-      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_3.png
-      image: "/images/products/aplicação-mockup_3.png",
+    
+      image: "https://via.placeholder.com/400x400/f3c8f3/e22897?text=Sérum+Vitamina+C",
       category: "serums",
       badge: "Promoção",
       rating: 4.7,
@@ -78,8 +78,8 @@ const Products: React.FC = () => {
       description: "Tratamento intensivo para pele ressecada. Resultado imediato.",
       price: 69.90,
       originalPrice: 89.90,
-      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_4.png
-      image: "/images/products/aplicação-mockup_4.png",
+
+      image: "https://via.placeholder.com/400x400/f3c8f3/e22897?text=Máscara+Hidratante",
       category: "masks",
       badge: "Oferta",
       rating: 4.6,
@@ -92,8 +92,8 @@ const Products: React.FC = () => {
       description: "Renovação celular suave. Remove células mortas sem agredir.",
       price: 79.90,
       originalPrice: 99.90,
-      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_5.png
-      image: "/images/products/aplicação-mockup_5.png",
+  
+      image: "https://via.placeholder.com/400x400/f3c8f3/e22897?text=Esfoliante+Facial",
       category: "cleansers",
       badge: "Popular",
       rating: 4.5,
@@ -106,8 +106,8 @@ const Products: React.FC = () => {
       description: "Proteção UVA/UVB com toque seco. Não deixa aspecto oleoso.",
       price: 99.90,
       originalPrice: 129.90,
-      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_7.png
-      image: "/images/products/aplicação-mockup_7.png",
+
+      image: "https://via.placeholder.com/400x400/f3c8f3/e22897?text=Protetor+Solar",
       category: "moisturizers",
       badge: "Essencial",
       rating: 4.9,
@@ -121,7 +121,7 @@ const Products: React.FC = () => {
       description: "Regeneração celular durante o sono. Ingredientes ativos para renovação da pele.",
       price: 179.90,
       originalPrice: 219.90,
-      // 🎯 IMAGEM ADICIONADA: aplicação-mockup_6.png
+      // 🎯 imagem adicionada
       image: "/images/products/aplicação-mockup_6.png",
       category: "moisturizers",
       badge: "Premium",

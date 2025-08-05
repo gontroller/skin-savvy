@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FiMenu, FiX, FiSearch, FiShoppingCart, FiUser } from 'react-icons/fi';
+import { FiMenu, FiX, FiShoppingCart } from 'react-icons/fi';
 import './header.css';
 
 function Header() {
@@ -20,9 +20,9 @@ function Header() {
                 </button>
             </div>
 
-            {/* 🎯 LOGO: Agora usando imagem */}
+            {/* 🎯 usando imagem */}
             <div className='logo-container'>
-                {/* 🎯 MELHOR PRÁTICA: Logo como imagem */}
+                {/* 🎯 Logo como imagem */}
                 <img 
                     src="/images/logo/logo-horizontal_2.svg.svg" 
                     alt="Skin Savvy - Logo"
@@ -33,7 +33,7 @@ function Header() {
                         e.currentTarget.nextElementSibling?.classList.remove('logo-fallback');
                     }}
                 />
-                {/* 🎯 FALLBACK: Texto como backup */}
+                {/* 🎯 FALLBACK*/}
                 <div className='logo logo-fallback'></div>
             </div>
 

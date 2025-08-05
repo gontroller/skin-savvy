@@ -88,7 +88,7 @@ export const productImages: ProductImage[] = [
 
 // 🎯 Função utilitária para gerar srcset
 export const generateSrcSet = (images: ProductImage['images']): string => {
-  // 🎯 SEGUINDO SEU README: Para imagens locais, usamos a mesma imagem
+  // 🎯Para imagens locais, usamos a mesma imagem
   // Em produção, você pode criar versões otimizadas
   return `${images.small} 300w, ${images.medium} 600w, ${images.large} 900w`;
 };
@@ -98,9 +98,9 @@ export const getProductImage = (id: number): ProductImage | undefined => {
   return productImages.find(img => img.id === id);
 };
 
-// 🎯  Placeholder seguindo seu README
+// 🎯  Placeholder 
 export const placeholderImage = {
-  // 🎯 SEGUINDO SEU README: Placeholders inteligentes
+  // 🎯 Placeholders inteligentes
   small: "https://via.placeholder.com/300x300/f3c8f3/e22897?text=Produto",
   medium: "https://via.placeholder.com/600x600/f3c8f3/e22897?text=Produto",
   large: "https://via.placeholder.com/900x900/f3c8f3/e22897?text=Produto",
