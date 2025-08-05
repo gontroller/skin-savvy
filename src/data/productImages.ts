@@ -14,75 +14,86 @@ export interface ProductImage {
   alt: string;
 }
 
-// 🎯 Imagens locais conforme README
-// Estrutura: public/images/products/nome-produto.jpg
+// 🎯 Imagens locais que realmente existem na pasta
+// Estrutura: public/images/products/aplicação-mockup_X.png
 export const productImages: ProductImage[] = [
   {
     id: 1,
-    name: "Gel Limpiador Suave",
+    name: "Chill Mask",
     images: {
-      // 🎯 Imagens locais em public/images/products/
-      small: "/images/products/cleanser-gel.jpg",
-      medium: "/images/products/cleanser-gel.jpg",
-      large: "/images/products/cleanser-gel.jpg",
-      original: "/images/products/cleanser-gel.jpg"
+      // 🎯 Imagens que realmente existem
+      small: "/images/products/aplicação-mockup_2.png",
+      medium: "/images/products/aplicação-mockup_2.png",
+      large: "/images/products/aplicação-mockup_2.png",
+      original: "/images/products/aplicação-mockup_2.png"
     },
-    alt: "Gel limpiador facial suave em frasco transparente"
+    alt: "Máscara facial noturna"
   },
   {
     id: 2,
-    name: "Hidratante Facial Premium",
+    name: "Sun Breeze",
     images: {
-      small: "/images/products/moisturizer-premium.jpg",
-      medium: "/images/products/moisturizer-premium.jpg",
-      large: "/images/products/moisturizer-premium.jpg",
-      original: "/images/products/moisturizer-premium.jpg"
+      small: "/images/products/aplicação-mockup_3.png",
+      medium: "/images/products/aplicação-mockup_3.png",
+      large: "/images/products/aplicação-mockup_3.png",
+      original: "/images/products/aplicação-mockup_3.png"
     },
-    alt: "Hidratante facial premium em frasco elegante"
+    alt: "Loção corporal"
   },
   {
     id: 3,
-    name: "Sérum Vitamina C",
+    name: "Polish Me",
     images: {
-      small: "/images/products/vitamin-c-serum.jpg",
-      medium: "/images/products/vitamin-c-serum.jpg",
-      large: "/images/products/vitamin-c-serum.jpg",
-      original: "/images/products/vitamin-c-serum.jpg"
+      small: "/images/products/aplicação-mockup_4.png",
+      medium: "/images/products/aplicação-mockup_4.png",
+      large: "/images/products/aplicação-mockup_4.png",
+      original: "/images/products/aplicação-mockup_4.png"
     },
-    alt: "Sérum de vitamina C em frasco âmbar"
+    alt: "Esfoliante Facial"
   },
   {
     id: 4,
-    name: "Máscara Hidratante",
+    name: "Clear Skin Jam",
     images: {
-      small: "/images/products/hydrating-mask.jpg",
-      medium: "/images/products/hydrating-mask.jpg",
-      large: "/images/products/hydrating-mask.jpg",
-      original: "/images/products/hydrating-mask.jpg"
+      small: "/images/products/aplicação-mockup_4.png",
+      medium: "/images/products/aplicação-mockup_4.png",
+      large: "/images/products/aplicação-mockup_4.png",
+      original: "/images/products/aplicação-mockup_4.png"
     },
-    alt: "Máscara hidratante em tubo"
+    alt: "Gel esfoliante facial"
   },
   {
     id: 5,
-    name: "Esfoliante Facial",
+    name: "Soft Touch",
     images: {
-      small: "/images/products/facial-scrub.jpg",
-      medium: "/images/products/facial-scrub.jpg",
-      large: "/images/products/facial-scrub.jpg",
-      original: "/images/products/facial-scrub.jpg"
+      small: "/images/products/aplicação-mockup_5.png",
+      medium: "/images/products/aplicação-mockup_5.png",
+      large: "/images/products/aplicação-mockup_5.png",
+      original: "/images/products/aplicação-mockup_5.png"
     },
-    alt: "Esfoliante facial em frasco"
+    alt: "Creme para as Mãos"
   },
   {
     id: 6,
-    name: "Protetor Solar FPS 50",
+    name: "Skin Boost",
     images: {
-      small: "/images/products/sunscreen-spf50.jpg",
-      medium: "/images/products/sunscreen-spf50.jpg",
-      large: "/images/products/sunscreen-spf50.jpg",
-      original: "/images/products/sunscreen-spf50.jpg"
+      small: "/images/products/aplicação-mockup_6.png",
+      medium: "/images/products/aplicação-mockup_6.png",
+      large: "/images/products/aplicação-mockup_6.png",
+      original: "/images/products/aplicação-mockup_6.png"
     },
-    alt: "Protetor solar FPS 50 em frasco"
+    alt: "Sérum multifuncional"
+  },
+  {
+    id: 7,
+    name: "Clean Bloom",
+    images: {
+      small: "/images/products/aplicação-mockup_7.png",
+      medium: "/images/products/aplicação-mockup_7.png",
+      large: "/images/products/aplicação-mockup_7.png",
+      original: "/images/products/aplicação-mockup_7.png"
+    },
+    alt: "Sabonete facial"
   }
 ];
 
@@ -128,15 +139,15 @@ export const validateImagePath = (): boolean => {
 
 1. 📁 SALVAR IMAGEM:
    - Salve a imagem em: public/images/products/
-   - Nome: kebab-case (ex: novo-produto.jpg)
+   - Nome: aplicação-mockup_X.png (onde X é o próximo número)
    - Dimensões: 400x400px (conforme README)
-   - Formato: JPG ou PNG
+   - Formato: PNG (conforme existente)
    - Qualidade: 80-85%
 
 2. 📝 ADICIONAR NO ARRAY:
    - Adicione um novo objeto no array productImages
    - Use o próximo ID disponível
-   - Siga o padrão de nomenclatura
+   - Siga o padrão de nomenclatura aplicação-mockup_X.png
 
 3. 🔗 CONECTAR NO COMPONENTE:
    - Atualize o array products em Products.tsx
@@ -144,13 +155,13 @@ export const validateImagePath = (): boolean => {
 
 EXEMPLO:
 {
-  id: 7, // Próximo ID disponível
+  id: 8, // Próximo ID disponível
   name: "Novo Produto",
   images: {
-    small: "/images/products/novo-produto.jpg",
-    medium: "/images/products/novo-produto.jpg",
-    large: "/images/products/novo-produto.jpg",
-    original: "/images/products/novo-produto.jpg"
+    small: "/images/products/aplicação-mockup_8.png",
+    medium: "/images/products/aplicação-mockup_8.png",
+    large: "/images/products/aplicação-mockup_8.png",
+    original: "/images/products/aplicação-mockup_8.png"
   },
   alt: "Descrição acessível do produto"
 }

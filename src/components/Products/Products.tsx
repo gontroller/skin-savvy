@@ -28,16 +28,15 @@ const Products: React.FC = () => {
     { id: 'masks', name: 'Máscaras', icon: <FiZap /> }
   ];
 
-  // 🎯 Dados tipados
+  // 🎯 Dados tipados com imagens corretas
   const products: Product[] = [
     {
       id: 1,
-      name: "Gel Limpiador Suave",
+      name: "Chill Mask",
       description: "Limpeza profunda sem ressecar a pele. Ideal para todos os tipos de pele.",
       price: 89.90,
       originalPrice: 119.90,
-    
-      image: "https://via.placeholder.com/400x400/f3c8f3/e22897?text=Gel+Limpiador",
+      image: "/images/products/aplicação-mockup_2.png", // 🎯 IMAGEM CORRETA
       category: "cleansers",
       badge: "Mais Vendido",
       rating: 4.9,
@@ -46,12 +45,11 @@ const Products: React.FC = () => {
     },
     {
       id: 2,
-      name: "Hidratante Facial Premium",
+      name: "Sun Breeze",
       description: "Hidratação intensa com ácido hialurônico. 24h de hidratação.",
       price: 129.90,
       originalPrice: 159.90,
-    
-      image: "https://via.placeholder.com/400x400/f3c8f3/e22897?text=Hidratante+Premium",
+      image: "/images/products/aplicação-mockup_3.png", // 🎯 IMAGEM CORRETA
       category: "moisturizers",
       badge: "Novo",
       rating: 4.8,
@@ -60,12 +58,11 @@ const Products: React.FC = () => {
     },
     {
       id: 3,
-      name: "Sérum Vitamina C",
+      name: "Polish Me",
       description: "Clareamento e uniformização da pele. Antioxidante poderoso.",
       price: 149.90,
       originalPrice: 189.90,
-    
-      image: "https://via.placeholder.com/400x400/f3c8f3/e22897?text=Sérum+Vitamina+C",
+      image: "/images/products/aplicação-mockup_4.png", // 🎯 IMAGEM CORRETA
       category: "serums",
       badge: "Promoção",
       rating: 4.7,
@@ -74,12 +71,11 @@ const Products: React.FC = () => {
     },
     {
       id: 4,
-      name: "Máscara Hidratante",
+      name: "Clear Skin Jam",
       description: "Tratamento intensivo para pele ressecada. Resultado imediato.",
       price: 69.90,
       originalPrice: 89.90,
-
-      image: "https://via.placeholder.com/400x400/f3c8f3/e22897?text=Máscara+Hidratante",
+      image: "/images/products/aplicação-mockup_4.png", // 🎯 IMAGEM CORRETA
       category: "masks",
       badge: "Oferta",
       rating: 4.6,
@@ -88,12 +84,11 @@ const Products: React.FC = () => {
     },
     {
       id: 5,
-      name: "Esfoliante Facial",
+      name: "Soft Touch",
       description: "Renovação celular suave. Remove células mortas sem agredir.",
       price: 79.90,
       originalPrice: 99.90,
-  
-      image: "https://via.placeholder.com/400x400/f3c8f3/e22897?text=Esfoliante+Facial",
+      image: "/images/products/aplicação-mockup_5.png", // 🎯 IMAGEM CORRETA
       category: "cleansers",
       badge: "Popular",
       rating: 4.5,
@@ -102,12 +97,11 @@ const Products: React.FC = () => {
     },
     {
       id: 6,
-      name: "Protetor Solar FPS 50",
+      name: "Skin Boost",
       description: "Proteção UVA/UVB com toque seco. Não deixa aspecto oleoso.",
       price: 99.90,
       originalPrice: 129.90,
-
-      image: "https://via.placeholder.com/400x400/f3c8f3/e22897?text=Protetor+Solar",
+      image: "/images/products/aplicação-mockup_6.png", // 🎯 IMAGEM CORRETA (pulando o 6)
       category: "moisturizers",
       badge: "Essencial",
       rating: 4.9,
@@ -117,15 +111,54 @@ const Products: React.FC = () => {
     // 🎯 Novo produto adicionado
     {
       id: 7,
-      name: "Creme Noturno Regenerador",
+      name: "Clean Bloom",
       description: "Regeneração celular durante o sono. Ingredientes ativos para renovação da pele.",
       price: 179.90,
       originalPrice: 219.90,
-      // 🎯 imagem adicionada
-      image: "/images/products/aplicação-mockup_6.png",
+      image: "/images/products/aplicação-mockup_7.png", // 🎯 IMAGEM CORRETA (pulando o 6)
       category: "moisturizers",
       badge: "Premium",
       rating: 4.9,
+      reviews: 892,
+      inStock: true
+    },
+    // 🎯 Produtos adicionais para usar todas as imagens disponíveis
+    {
+      id: 8,
+      name: "Tone&Treat",
+      description: "Reduz rugas e linhas de expressão. Peptídeos e retinol.",
+      price: 199.90,
+      originalPrice: 249.90,
+      image: "/images/products/aplicação-mockup_8.png",
+      category: "serums",
+      badge: "Revolucionário",
+      rating: 4.9,
+      reviews: 1567,
+      inStock: true
+    },
+    {
+      id: 9,
+      name: "Glass Glow",
+      description: "Desintoxicação profunda. Remove impurezas e controla oleosidade.",
+      price: 89.90,
+      originalPrice: 119.90,
+      image: "/images/products/aplicação-mockup_9.png",
+      category: "masks",
+      badge: "Detox",
+      rating: 4.7,
+      reviews: 892,
+      inStock: true
+    },
+    {
+      id: 10,
+      name: "Duo Peach Sleep + Under Glow",
+      description: "Desintoxicação profunda. Remove impurezas e controla oleosidade.",
+      price: 89.90,
+      originalPrice: 119.90,
+      image: "/images/products/aplicação-mockup_10.png",
+      category: "masks",
+      badge: "Detox",
+      rating: 4.7,
       reviews: 892,
       inStock: true
     }
