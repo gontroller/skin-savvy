@@ -1,4 +1,4 @@
-# 🌸 Skin Savvy - Gontroller
+# 🌸 Skin Savvy - DevSign Studio
 
 [![Deploy Status](https://img.shields.io/badge/deploy-vercel-black?logo=vercel)](https://skin-savvy.vercel.app)
 [![React](https://img.shields.io/badge/React-19.1.0-61DAFB?logo=react)](https://reactjs.org/)
