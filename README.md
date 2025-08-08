@@ -176,15 +176,15 @@ Este projeto é **propriedade exclusiva** da empresa cliente e está protegido p
 - ✅ Contribuir se autorizado pela empresa
 
 ### 📄 Licença
-**Todos os direitos reservados** © 2024 [Nome da Empresa Cliente]
+**Todos os direitos reservados** © 2025 [DevSign Studio]
 
 ## 👥 Equipe de Desenvolvimento
 
 ### Desenvolvedor Principal
 - **Frontend Developer**: [Gontroller]
-- - **Identidade Visual**: [Leticia] (https://www.behance.net/leledesigner)
 - **GitHub**: [github.com/gontroller]
 - **LinkedIn**: [https://www.linkedin.com/in/gabrieltasso/]
+- - **Identidade Visual**: [Leticia] (https://www.behance.net/leledesigner)
 
 ### Contato para Suporte
 - 📧 **Email**: [gontroller@icloud.com]
