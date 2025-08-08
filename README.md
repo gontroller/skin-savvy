@@ -181,14 +181,13 @@ Este projeto é **propriedade exclusiva** da empresa cliente e está protegido p
 ## 👥 Equipe de Desenvolvimento
 
 ### Desenvolvedor Principal
-- **Frontend Developer**: [Seu Nome]
-- **GitHub**: [Seu GitHub]
-- **LinkedIn**: [Seu LinkedIn]
+- **Frontend Developer**: [Gontroller]
+- - **Identidade Visual**: [Leticia] (https://www.behance.net/leledesigner)
+- **GitHub**: [github.com/gontroller]
+- **LinkedIn**: [https://www.linkedin.com/in/gabrieltasso/]
 
 ### Contato para Suporte
-- 📧 **Email**: [seu-email@empresa.com]
-- 💬 **Slack**: [canal-do-projeto]
-- 📱 **WhatsApp**: [seu-numero]
+- 📧 **Email**: [gontroller@icloud.com]
 
 ## 📈 Próximas Funcionalidades
 
