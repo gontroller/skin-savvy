@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FiMenu, FiX, FiShoppingCart } from 'react-icons/fi';
-import './header.css';
+import './Header.css';
 
 function Header() {
     // Criando o estado
@@ -23,8 +23,8 @@ function Header() {
             {/* 🎯 usando imagem */}
             <div className='logo-container'>
                 {/* 🎯 Logo como imagem */}
-                <img 
-                    src="/images/logo/logo-horizontal_2.svg.svg" 
+                <img
+                    src="/images/logo/logo-horizontal_2.svg.svg"
                     alt="Skin Savvy - Logo"
                     className="logo-image"
                     onError={(e) => {
