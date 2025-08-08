@@ -6,15 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
-    sourcemap: false,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          icons: ['react-icons/fi']
-        }
-      }
-    }
+    sourcemap: false
   },
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx']

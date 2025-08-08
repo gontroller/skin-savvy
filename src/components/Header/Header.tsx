@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FiMenu, FiX, FiShoppingCart } from 'react-icons/fi';
-import './Header.css';
+import './header.css';
 
 function Header() {
     // Criando o estado
